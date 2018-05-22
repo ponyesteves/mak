@@ -59,7 +59,7 @@ msgstr "Ingresar"
 #, elixir-format
 #: lib/mak_web/templates/machine/index.html.eex:8
 msgid "find machine"
-msgstr ""
+msgstr "Buscar Máquina por código o nombre"
 
 #, elixir-format
 #: lib/mak_web/templates/machine/form.html.eex:21
@@ -69,4 +69,38 @@ msgstr ""
 #, elixir-format
 #: lib/mak_web/templates/machine/index.html.eex:1
 msgid "listing machines"
-msgstr ""
+msgstr "Máquinas"
+
+#, elixir-format
+#: lib/mak_web/templates/machine/index.html.eex:32
+#: lib/mak_web/templates/user/index.html.eex:21
+msgid "Are you sure?"
+msgstr "Esta seguro? --Esta acción es irreversible"
+
+#, elixir-format
+#: lib/mak_web/templates/machine/index.html.eex:32
+msgid "delete"
+msgstr "Borrar"
+
+#, elixir-format
+#: lib/mak_web/templates/machine/index.html.eex:31
+#: lib/mak_web/templates/user/index.html.eex:20
+#: lib/mak_web/templates/user/index.html.eex:21
+msgid "edit"
+msgstr "Editar"
+
+#, elixir-format
+#: lib/mak_web/templates/machine/index.html.eex:39
+msgid "new machine"
+msgstr "Nueva Máquina"
+
+#, elixir-format
+#: lib/mak_web/templates/user/index.html.eex:28
+msgid "new user"
+msgstr "Nuevo Usuario"
+
+#, elixir-format
+#: lib/mak_web/templates/machine/index.html.eex:30
+#: lib/mak_web/templates/user/index.html.eex:19
+msgid "show"
+msgstr "Ir"

@@ -18,73 +18,73 @@ msgid "has already been taken"
 msgstr "Este valor se encuentra duplicado"
 
 msgid "is invalid"
-msgstr ""
+msgstr "Campo invalido"
 
 msgid "must be accepted"
-msgstr ""
+msgstr "Debe ser aceptado"
 
 msgid "has invalid format"
-msgstr ""
+msgstr "Formato invalido"
 
 msgid "has an invalid entry"
-msgstr ""
+msgstr "Entrada invalida"
 
 msgid "is reserved"
-msgstr ""
+msgstr "Reservado"
 
 msgid "does not match confirmation"
-msgstr ""
+msgstr "No coincide con la confirmación"
 
 msgid "is still associated with this entry"
-msgstr ""
+msgstr "Asociado a este entrada"
 
 msgid "are still associated with this entry"
-msgstr ""
+msgstr "Asociados a esta entrada"
 
 msgid "should be %{count} character(s)"
 msgid_plural "should be %{count} character(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Debe tener %{count} caracter"
+msgstr[1] "Debe tener %{count} caracteres"
 
 msgid "should have %{count} item(s)"
 msgid_plural "should have %{count} item(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Debe tener %{count} item"
+msgstr[1] "Debe tener %{count} items"
 
 msgid "should be at least %{count} character(s)"
 msgid_plural "should be at least %{count} character(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Al menos %{count} caracter"
+msgstr[1] "Al menos %{count} caracteres"
 
 msgid "should have at least %{count} item(s)"
 msgid_plural "should have at least %{count} item(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Al menos %{count} item"
+msgstr[1] "Al menos %{count} items"
 
 msgid "should be at most %{count} character(s)"
 msgid_plural "should be at most %{count} character(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Como máximo %{count} caracter"
+msgstr[1] "Como máximo %{count} caracters"
 
 msgid "should have at most %{count} item(s)"
 msgid_plural "should have at most %{count} item(s)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Como máximo %{count} item"
+msgstr[1] "Como máximo %{count} items"
 
 msgid "must be less than %{number}"
-msgstr ""
+msgstr "Debe ser menor que %{number}"
 
 msgid "must be greater than %{number}"
-msgstr ""
+msgstr "Debe ser mayor que %{number}"
 
 msgid "must be less than or equal to %{number}"
-msgstr ""
+msgstr "Debe ser menor o igual que %{number}"
 
 msgid "must be greater than or equal to %{number}"
-msgstr ""
+msgstr "Debe ser mayor o igual que"
 
 msgid "must be equal to %{number}"
-msgstr ""
+msgstr "Debe ser igual que %{number}"
 
 #, elixir-format
 #: lib/mak_web/templates/machine/form.html.eex:4
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Oops, something went wrong! Please check the errors below."
 msgstr "Parece que hubo un problema! Revise los errores e intente nuevamente"
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/mak/base/machine.ex:45
-msgid "image should by smaller than %{size} KB"
+msgid "image should by smaller than %{size}"
 msgstr "La imagen adjunta debe pesar menos de %{size} KB"
