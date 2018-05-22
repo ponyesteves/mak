@@ -32,4 +32,9 @@ defmodule Mak.Base.Machine do
   defp gen_code do
     Ecto.UUID.generate |> binary_part(6,6)
   end
+
+  # For slugging
+  # defimpl Phoenix.Param, for: Mak.Base.Machine do
+  #   def to_param(%{code: code}), do: code
+  # end
 end
