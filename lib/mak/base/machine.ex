@@ -7,6 +7,7 @@ defmodule Mak.Base.Machine do
     field :code, :string
     field :desc, :string
     field :name, :string
+    field :image, :binary
 
     timestamps()
   end
@@ -15,11 +16,22 @@ defmodule Mak.Base.Machine do
   def changeset(machine, attrs) do
     machine
     |> cast(attrs, [:code, :name, :desc])
+    |> parse_image(attrs)
     |> put_code
     |> validate_required([:code, :name, :desc])
     |> unique_constraint(:code)
+    |> IO.inspect
 
   end
+
+  def parse_image(changeset, %{"image" => image} ) do
+    file = File.read!(image.path)
+    IO.inspect is_binary(file)
+    IO.inspect File.read!(image.path)
+    change(changeset, %{image: File.read!(image.path)})
+  end
+
+  def parse_image(changeset, _), do: changeset
 
   def put_code(changeset) do
     unless(get_field(changeset, :code)) do

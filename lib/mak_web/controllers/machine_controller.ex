@@ -15,6 +15,7 @@ defmodule MakWeb.MachineController do
   end
 
   def create(conn, %{"machine" => machine_params}) do
+
     case Base.create_machine(machine_params) do
       {:ok, machine} ->
         conn
@@ -37,6 +38,8 @@ defmodule MakWeb.MachineController do
   end
 
   def update(conn, %{"id" => id, "machine" => machine_params}) do
+    IO.inspect machine_params
+
     machine = Base.get_machine!(id)
 
     case Base.update_machine(machine, machine_params) do
