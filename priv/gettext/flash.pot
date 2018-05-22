@@ -1,0 +1,26 @@
+## This file is a PO Template file.
+##
+## `msgid`s here are often extracted from source code.
+## Add new translations manually only if they're dynamic
+## translations that can't be statically extracted.
+##
+## Run `mix gettext.extract` to bring this file up to
+## date. Leave `msgstr`s empty as changing them here as no
+## effect: edit them in PO (`.po`) files instead.
+msgid ""
+msgstr ""
+
+#, elixir-format
+#: lib/mak_web/controllers/machine_controller.ex:23
+msgid "Machine created successfully."
+msgstr ""
+
+#, elixir-format
+#: lib/mak_web/controllers/machine_controller.ex:61
+msgid "Machine deleted successfully."
+msgstr ""
+
+#, elixir-format
+#: lib/mak_web/controllers/machine_controller.ex:48
+msgid "Machine updated successfully."
+msgstr ""

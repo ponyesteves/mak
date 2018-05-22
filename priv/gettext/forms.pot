@@ -24,6 +24,7 @@ msgstr ""
 #, elixir-format
 #: lib/mak_web/templates/machine/form.html.eex:9
 #: lib/mak_web/templates/machine/index.html.eex:15
+#: lib/mak_web/templates/machine/show.html.eex:5
 msgid "code"
 msgstr ""
 
@@ -85,7 +86,7 @@ msgstr ""
 #, elixir-format
 #: lib/mak_web/templates/machine/edit.html.eex:1
 #: lib/mak_web/templates/machine/index.html.eex:31
-#: lib/mak_web/templates/machine/show.html.eex:26
+#: lib/mak_web/templates/machine/show.html.eex:52
 #: lib/mak_web/templates/user/index.html.eex:20
 #: lib/mak_web/templates/user/show.html.eex:17
 msgid "edit"
@@ -110,7 +111,7 @@ msgstr ""
 #, elixir-format
 #: lib/mak_web/templates/machine/edit.html.eex:5
 #: lib/mak_web/templates/machine/new.html.eex:5
-#: lib/mak_web/templates/machine/show.html.eex:27
+#: lib/mak_web/templates/machine/show.html.eex:55
 #: lib/mak_web/templates/user/edit.html.eex:5
 #: lib/mak_web/templates/user/new.html.eex:5
 #: lib/mak_web/templates/user/show.html.eex:18
@@ -120,6 +121,7 @@ msgstr ""
 #, elixir-format
 #: lib/mak_web/templates/machine/edit.html.eex:1
 #: lib/mak_web/templates/machine/new.html.eex:1
+#: lib/mak_web/templates/machine/show.html.eex:4
 msgid "machine"
 msgstr ""
 

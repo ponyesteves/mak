@@ -1,6 +1,8 @@
 defmodule MakWeb.MachineController do
   use MakWeb, :controller
 
+  import MakWeb.Gettext, only: [dgettext: 2]
+
   alias Mak.Base
   alias Mak.Base.Machine
 
@@ -18,7 +20,7 @@ defmodule MakWeb.MachineController do
     case Base.create_machine(machine_params) do
       {:ok, machine} ->
         conn
-        |> put_flash(:info, "Machine created successfully.")
+        |> put_flash(:info, dgettext("flash", "Machine created successfully."))
         |> redirect(to: machine_path(conn, :show, machine))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -43,7 +45,7 @@ defmodule MakWeb.MachineController do
     case Base.update_machine(machine, machine_params) do
       {:ok, machine} ->
         conn
-        |> put_flash(:info, "Machine updated successfully.")
+        |> put_flash(:info, dgettext("flash", "Machine updated successfully."))
         |> redirect(to: machine_path(conn, :show, machine))
 
       {:error, %Ecto.Changeset{} = changeset} ->
@@ -56,7 +58,7 @@ defmodule MakWeb.MachineController do
     {:ok, _machine} = Base.delete_machine(machine)
 
     conn
-    |> put_flash(:info, "Machine deleted successfully.")
+    |> put_flash(:info, dgettext("flash", "Machine deleted successfully."))
     |> redirect(to: machine_path(conn, :index))
   end
 end

@@ -1,0 +1,27 @@
+## `msgid`s in this file come from POT (.pot) files.
+##
+## Do not add, change, or remove `msgid`s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
+##
+## Use `mix gettext.extract --merge` or `mix gettext.merge`
+## to merge POT files into PO files.
+msgid ""
+msgstr ""
+"Language: es\n"
+"Plural-Forms: nplurals=2\n"
+
+#, elixir-format
+#: lib/mak_web/controllers/machine_controller.ex:23
+msgid "Machine created successfully."
+msgstr "Maquinas creada!"
+
+#, elixir-format, fuzzy
+#: lib/mak_web/controllers/machine_controller.ex:61
+msgid "Machine deleted successfully."
+msgstr "Máquina borrada!"
+
+#, elixir-format, fuzzy
+#: lib/mak_web/controllers/machine_controller.ex:48
+msgid "Machine updated successfully."
+msgstr "Máquina actualizada!"
