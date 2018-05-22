@@ -1,5 +1,7 @@
 <h2><%= dgettext("forms", "listing machines") %></h2>
-
+<%= form_for @conn, machine_path(@conn, :index), [method: :get], fn f -> %>
+  <%= text_input f, :q, placeholder: dgettext("forms", "find machine") %>
+<% end %>
 <table class="table">
   <thead>
     <tr>

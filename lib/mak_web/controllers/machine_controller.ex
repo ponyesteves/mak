@@ -4,8 +4,8 @@ defmodule MakWeb.MachineController do
   alias Mak.Base
   alias Mak.Base.Machine
 
-  def index(conn, _params) do
-    machines = Base.list_machines()
+  def index(conn, params) do
+    machines = Base.list_machines(params["q"])
     render(conn, "index.html", machines: machines)
   end
 

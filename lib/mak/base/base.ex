@@ -17,8 +17,11 @@ defmodule Mak.Base do
       [%Machine{}, ...]
 
   """
-  def list_machines do
-    Repo.all(Machine)
+  def list_machines(code_name \\ "") do
+    query = "%#{code_name}%"
+    Machine
+    |> where([m], ilike(m.code, ^query) or ilike(m.name, ^query))
+    |> Repo.all()
   end
 
   @doc """
