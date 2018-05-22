@@ -24,3 +24,13 @@ msgstr ""
 #: lib/mak_web/controllers/machine_controller.ex:48
 msgid "Machine updated successfully."
 msgstr ""
+
+#, elixir-format
+#: lib/mak_web/controllers/session_controller.ex:21
+msgid "invalid credentials"
+msgstr ""
+
+#, elixir-format
+#: lib/mak_web/controllers/session_controller.ex:29
+msgid "see you"
+msgstr ""

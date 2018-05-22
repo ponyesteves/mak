@@ -25,3 +25,8 @@ msgstr "Bienvenido a %{name}!"
 #: lib/mak_web/templates/layout/landing.html.eex:10
 msgid "Mak App"
 msgstr ""
+
+#, elixir-format, fuzzy
+#: lib/mak_web/controllers/session_controller.ex:16
+msgid "welcome"
+msgstr "Bienvenido"

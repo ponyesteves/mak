@@ -1,6 +1,8 @@
 defmodule MakWeb.SessionController do
   use MakWeb, :controller
 
+  import MakWeb.Gettext, only: [dgettext: 2, gettext: 1]
+
   alias MakWeb.Auth
 
   def new(conn, _) do
@@ -11,12 +13,12 @@ defmodule MakWeb.SessionController do
     case Auth.login_by_username_and_pass(conn, user, pass, repo: Mak.Repo) do
       {:ok, conn} ->
         conn
-        |> put_flash(:info, "Bienvenido!")
+        |> put_flash(:info, gettext("welcome"))
         |> redirect(to: machine_path(conn, :index))
 
       {:error, _reason, conn} ->
         conn
-        |> put_flash(:error, "Invalid Credentials!")
+        |> put_flash(:error, dgettext("flash", "invalid credentials"))
         |> render("new.html")
     end
   end
@@ -24,7 +26,7 @@ defmodule MakWeb.SessionController do
   def drop(conn, _) do
     conn
     |> Auth.logout()
-    |> put_flash(:info, "Hasta la próxima!")
+    |> put_flash(:info, dgettext("flash", "see you"))
     |> redirect(to: page_path(conn, :index))
   end
 end

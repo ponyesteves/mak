@@ -16,12 +16,22 @@ msgstr ""
 msgid "Machine created successfully."
 msgstr "Maquinas creada!"
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/mak_web/controllers/machine_controller.ex:61
 msgid "Machine deleted successfully."
 msgstr "Máquina borrada!"
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/mak_web/controllers/machine_controller.ex:48
 msgid "Machine updated successfully."
 msgstr "Máquina actualizada!"
+
+#, elixir-format
+#: lib/mak_web/controllers/session_controller.ex:21
+msgid "invalid credentials"
+msgstr "Usuario o contraseña invalidos"
+
+#, elixir-format
+#: lib/mak_web/controllers/session_controller.ex:29
+msgid "see you"
+msgstr "Hasta la próxima!"
