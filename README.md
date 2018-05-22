@@ -1,4 +1,4 @@
-# CeiboBase
+# Mak
 
 To start your Phoenix server:
 

@@ -6,26 +6,26 @@
 use Mix.Config
 
 # General application configuration
-config :ceiboBase,
-  ecto_repos: [CeiboBase.Repo]
+config :mak,
+  ecto_repos: [Mak.Repo]
 
 # Configures Guardian
-config :ceiboBase, CeiboBase.Guardian,
-  issuer: "ceiboBase",
+config :mak, Mak.Guardian,
+  issuer: "mak",
   secret_key: "mzRoWUUAbgH4XOmfb9zoXh/3ErxUBlXDhP/1UH3DdvaMCqlp+em9VMFubctjMGOa"
 
 # Configures GuardianPipeLine
 
-config :ceiboBase, CeiboBaseWeb.Guardian.AuthAccessPipeline,
-  module: CeiboBase.Guardian,
-  error_handler: CeiboBaseWeb.Guardian.AuthErrorHandler
+config :mak, MakWeb.Guardian.AuthAccessPipeline,
+  module: Mak.Guardian,
+  error_handler: MakWeb.Guardian.AuthErrorHandler
 
 # Configures the endpoint
-config :ceiboBase, CeiboBaseWeb.Endpoint,
+config :mak, MakWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "4ntVSROhkwXahcj9VuTqRRm804z4eQcSd8Js0mF+6Tshn2MLEAPuzcDOdsl8Xg6p",
-  render_errors: [view: CeiboBaseWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: CeiboBase.PubSub, adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: MakWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Mak.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

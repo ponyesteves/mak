@@ -1,4 +1,4 @@
-defmodule CeiboBase.Repo.Migrations.CreateUsers do
+defmodule Mak.Repo.Migrations.CreateUsers do
   use Ecto.Migration
 
   def change do

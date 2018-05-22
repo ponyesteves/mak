@@ -1,4 +1,3 @@
 ExUnit.start()
 
-Ecto.Adapters.SQL.Sandbox.mode(CeiboBase.Repo, :manual)
-
+Ecto.Adapters.SQL.Sandbox.mode(Mak.Repo, :manual)

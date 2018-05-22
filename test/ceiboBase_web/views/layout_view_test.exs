@@ -1,3 +1,3 @@
-defmodule CeiboBaseWeb.LayoutViewTest do
-  use CeiboBaseWeb.ConnCase, async: true
+defmodule MakWeb.LayoutViewTest do
+  use MakWeb.ConnCase, async: true
 end

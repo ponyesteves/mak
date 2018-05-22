@@ -1,7 +1,7 @@
-defmodule CeiboBaseWeb.UserControllerTest do
-  use CeiboBaseWeb.ConnCase
+defmodule MakWeb.UserControllerTest do
+  use MakWeb.ConnCase
 
-  alias CeiboBase.Accounts
+  alias Mak.Accounts
 
   @create_attrs %{password_hash: "some password_hash", username: "some username"}
   @update_attrs %{password_hash: "some updated password_hash", username: "some updated username"}

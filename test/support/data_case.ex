@@ -1,4 +1,4 @@
-defmodule CeiboBase.DataCase do
+defmodule Mak.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -16,20 +16,20 @@ defmodule CeiboBase.DataCase do
 
   using do
     quote do
-      alias CeiboBase.Repo
+      alias Mak.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import CeiboBase.DataCase
+      import Mak.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(CeiboBase.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Mak.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(CeiboBase.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Mak.Repo, {:shared, self()})
     end
 
     :ok

@@ -1,5 +1,5 @@
-defmodule CeiboBaseWeb.PageControllerTest do
-  use CeiboBaseWeb.ConnCase
+defmodule MakWeb.PageControllerTest do
+  use MakWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get conn, "/"

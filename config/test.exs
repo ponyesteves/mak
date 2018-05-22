@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :ceiboBase, CeiboBaseWeb.Endpoint,
+config :mak, MakWeb.Endpoint,
   http: [port: 4001],
   server: false
 
@@ -10,10 +10,10 @@ config :ceiboBase, CeiboBaseWeb.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :ceiboBase, CeiboBase.Repo,
+config :mak, Mak.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
-  database: "ceibobase_test",
+  database: "mak_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

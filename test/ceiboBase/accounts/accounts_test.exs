@@ -1,10 +1,10 @@
-defmodule CeiboBase.AccountsTest do
-  use CeiboBase.DataCase
+defmodule Mak.AccountsTest do
+  use Mak.DataCase
 
-  alias CeiboBase.Accounts
+  alias Mak.Accounts
 
   describe "users" do
-    alias CeiboBase.Accounts.User
+    alias Mak.Accounts.User
 
     @valid_attrs %{password_hash: "some password_hash", username: "some username"}
     @update_attrs %{password_hash: "some updated password_hash", username: "some updated username"}
