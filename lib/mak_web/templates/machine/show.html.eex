@@ -1,0 +1,23 @@
+<h2>Show Machine</h2>
+
+<ul>
+
+  <li>
+    <strong>Code:</strong>
+    <%= @machine.code %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @machine.name %>
+  </li>
+
+  <li>
+    <strong>Desc:</strong>
+    <%= @machine.desc %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: machine_path(@conn, :edit, @machine) %></span>
+<span><%= link "Back", to: machine_path(@conn, :index) %></span>

@@ -1,0 +1,30 @@
+<h2>Listing Machines</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Desc</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for machine <- @machines do %>
+    <tr>
+      <td><%= machine.code %></td>
+      <td><%= machine.name %></td>
+      <td><%= machine.desc %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: machine_path(@conn, :show, machine), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: machine_path(@conn, :edit, machine), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: machine_path(@conn, :delete, machine), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Machine", to: machine_path(@conn, :new) %></span>
