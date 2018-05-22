@@ -21,3 +21,12 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
 ```shell
 mix i18n
 ```
+
+## To Deploy
+
+### cd assets && yarn build
+### MIX_ENV=prod mix ecto.drop
+### MIX_ENV=prod mix ecto.create
+### MIX_ENV=prod mix ecto.migrate
+### mix phx.digest
+### PORT=4001 MIX_ENV=prod mix phx.server
