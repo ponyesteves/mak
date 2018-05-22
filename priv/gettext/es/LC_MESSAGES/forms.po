@@ -1,47 +1,48 @@
-## This file is a PO Template file.
+## `msgid`s in this file come from POT (.pot) files.
 ##
-## `msgid`s here are often extracted from source code.
-## Add new translations manually only if they're dynamic
-## translations that can't be statically extracted.
+## Do not add, change, or remove `msgid`s manually here as
+## they're tied to the ones in the corresponding POT file
+## (with the same domain).
 ##
-## Run `mix gettext.extract` to bring this file up to
-## date. Leave `msgstr`s empty as changing them here as no
-## effect: edit them in PO (`.po`) files instead.
+## Use `mix gettext.extract --merge` or `mix gettext.merge`
+## to merge POT files into PO files.
 msgid ""
 msgstr ""
+"Language: es\n"
+"Plural-Forms: nplurals=2\n"
 
 #, elixir-format
 #: lib/mak_web/templates/layout/app.html.eex:30
 msgid "logout"
-msgstr ""
+msgstr "Salir"
 
 #, elixir-format
 #: lib/mak_web/templates/machine/form.html.eex:27
 #: lib/mak_web/templates/session/new.html.eex:16
 msgid "submit"
-msgstr ""
+msgstr "Enviar"
 
 #, elixir-format
 #: lib/mak_web/templates/machine/form.html.eex:9
 msgid "code"
-msgstr ""
+msgstr "Código"
 
 #, elixir-format
 #: lib/mak_web/templates/machine/form.html.eex:21
 msgid "desc"
-msgstr ""
+msgstr "Descripción"
 
 #, elixir-format
 #: lib/mak_web/templates/machine/form.html.eex:15
 msgid "name"
-msgstr ""
+msgstr "Nombre"
 
 #, elixir-format
 #: lib/mak_web/templates/session/new.html.eex:10
 msgid "password"
-msgstr ""
+msgstr "Contraseña"
 
 #, elixir-format
 #: lib/mak_web/templates/session/new.html.eex:4
 msgid "username"
-msgstr ""
+msgstr "Nombre de usuario"
