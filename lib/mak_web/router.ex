@@ -25,6 +25,7 @@ defmodule MakWeb.Router do
     resources("/users", UserController, only: [:new, :create, :edit, :update])
     resources("/sessions", SessionController, only: [:new, :create])
     delete("/sessions/drop", SessionController, :drop)
+    resources("/machines", MachineController)
   end
 
   scope "/", MakWeb do
