@@ -27,7 +27,6 @@ defmodule MakWeb.Router do
 
     resources("/users", UserController, only: [:new, :create, :edit, :update])
     resources("/sessions", SessionController, only: [:new, :create])
-    resources("/machines", MachineController)
 
     get("/", PageController, :index)
     delete("/sessions/drop", SessionController, :drop)
@@ -37,6 +36,7 @@ defmodule MakWeb.Router do
   scope "/", MakWeb do
     pipe_through([:browser, :auth])
 
+    resources("/machines", MachineController)
     resources("/users", UserController, only: [:index, :show, :delete])
   end
 

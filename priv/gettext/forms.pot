@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/layout/app.html.eex:30
+#: lib/mak_web/templates/layout/app.html.eex:19
 msgid "logout"
 msgstr ""
 
@@ -44,4 +44,10 @@ msgstr ""
 #, elixir-format
 #: lib/mak_web/templates/session/new.html.eex:4
 msgid "username"
+msgstr ""
+
+#, elixir-format
+#: lib/mak_web/templates/layout/landing.html.eex:19
+#: lib/mak_web/templates/session/new.html.eex:1
+msgid "login"
 msgstr ""

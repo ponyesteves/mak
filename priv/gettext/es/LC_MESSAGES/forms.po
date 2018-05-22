@@ -12,9 +12,9 @@ msgstr ""
 "Plural-Forms: nplurals=2\n"
 
 #, elixir-format
-#: lib/mak_web/templates/layout/app.html.eex:30
+#: lib/mak_web/templates/layout/app.html.eex:19
 msgid "logout"
-msgstr "Salir"
+msgstr "Cerrar Sessión"
 
 #, elixir-format
 #: lib/mak_web/templates/machine/form.html.eex:27
@@ -46,3 +46,9 @@ msgstr "Contraseña"
 #: lib/mak_web/templates/session/new.html.eex:4
 msgid "username"
 msgstr "Nombre de usuario"
+
+#, elixir-format
+#: lib/mak_web/templates/layout/landing.html.eex:19
+#: lib/mak_web/templates/session/new.html.eex:1
+msgid "login"
+msgstr "Ingresar"

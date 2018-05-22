@@ -1,11 +1,11 @@
-<h2>Listing Machines</h2>
+<h2><%= dgettext("forms", "listing machines") %></h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Code</th>
-      <th>Name</th>
-      <th>Desc</th>
+      <th><%= dgettext("forms", "code") %></th>
+      <th><%= dgettext("forms", "name") %></th>
+      <th><%= dgettext("forms", "desc") %></th>
 
       <th></th>
     </tr>

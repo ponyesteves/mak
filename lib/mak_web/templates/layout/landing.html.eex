@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><%= gettext("Landing") %></title>
+    <title><%= gettext("Mak App") %></title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
 
@@ -16,7 +16,7 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <li><%= link dgettext("forms","login"), to: session_path(@conn, :new), class: "btn btn-default btn-flat" %></li>
           </ul>
         </nav>
         <span class="logo"></span>
@@ -27,11 +27,9 @@
 
       <main role="main">
         <div id="my-react-app"> </div>
-         <%= link dgettext("forms","logout"), to: session_path(@conn, :drop), method: "delete", class: "btn btn-default btn-flat" %>
         <%= render @view_module, @view_template, assigns %>
       </main>
 
     </div> <!-- /container -->
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

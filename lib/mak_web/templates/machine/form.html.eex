@@ -1,7 +1,7 @@
 <%= form_for @changeset, @action, fn f -> %>
   <%= if @changeset.action do %>
     <div class="alert alert-danger">
-      <p>Oops, something went wrong! Please check the errors below.</p>
+      <p><%= dgettext("errors","Oops, something went wrong! Please check the errors below." ) %></p>
     </div>
   <% end %>
 
@@ -19,7 +19,7 @@
 
   <div class="form-group">
     <%= label f, dgettext("forms", "desc"), class: "control-label" %>
-    <%= text_input f, :desc, class: "form-control" %>
+    <%= textarea f, :desc, class: "form-control", rows: 10 %>
     <%= error_tag f, :desc %>
   </div>
 
