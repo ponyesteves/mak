@@ -16,23 +16,26 @@ msgid "logout"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/machine/form.html.eex:27
+#: lib/mak_web/templates/machine/form.html.eex:33
 #: lib/mak_web/templates/session/new.html.eex:16
 msgid "submit"
 msgstr ""
 
 #, elixir-format
 #: lib/mak_web/templates/machine/form.html.eex:9
+#: lib/mak_web/templates/machine/index.html.eex:15
 msgid "code"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/machine/form.html.eex:21
+#: lib/mak_web/templates/machine/form.html.eex:27
+#: lib/mak_web/templates/machine/index.html.eex:17
 msgid "desc"
 msgstr ""
 
 #, elixir-format
 #: lib/mak_web/templates/machine/form.html.eex:15
+#: lib/mak_web/templates/machine/index.html.eex:16
 msgid "name"
 msgstr ""
 
@@ -50,4 +53,19 @@ msgstr ""
 #: lib/mak_web/templates/layout/landing.html.eex:19
 #: lib/mak_web/templates/session/new.html.eex:1
 msgid "login"
+msgstr ""
+
+#, elixir-format
+#: lib/mak_web/templates/machine/index.html.eex:8
+msgid "find machine"
+msgstr ""
+
+#, elixir-format
+#: lib/mak_web/templates/machine/form.html.eex:21
+msgid "image"
+msgstr ""
+
+#, elixir-format
+#: lib/mak_web/templates/machine/index.html.eex:1
+msgid "listing machines"
 msgstr ""

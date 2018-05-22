@@ -15,12 +15,12 @@ defmodule MakWeb.MachineController do
   end
 
   def create(conn, %{"machine" => machine_params}) do
-
     case Base.create_machine(machine_params) do
       {:ok, machine} ->
         conn
         |> put_flash(:info, "Machine created successfully.")
         |> redirect(to: machine_path(conn, :show, machine))
+
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -38,8 +38,6 @@ defmodule MakWeb.MachineController do
   end
 
   def update(conn, %{"id" => id, "machine" => machine_params}) do
-    IO.inspect machine_params
-
     machine = Base.get_machine!(id)
 
     case Base.update_machine(machine, machine_params) do
@@ -47,6 +45,7 @@ defmodule MakWeb.MachineController do
         conn
         |> put_flash(:info, "Machine updated successfully.")
         |> redirect(to: machine_path(conn, :show, machine))
+
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", machine: machine, changeset: changeset)
     end
