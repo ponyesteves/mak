@@ -14,5 +14,5 @@
 
 </ul>
 
-<span><%= link "Edit", to: user_path(@conn, :edit, @user) %></span>
-<span><%= link "Back", to: user_path(@conn, :index) %></span>
+<span><%= link  dgettext("forms", "edit"), to: user_path(@conn, :edit, @user) %></span>
+<span><%= link dgettext("forms", "back"), to: user_path(@conn, :index) %></span>

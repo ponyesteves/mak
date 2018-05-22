@@ -18,10 +18,10 @@
   </li>
 
   <li>
-    <%= img_tag(img_from_binary(@machine.image)) %>
+    <%= @machine.image && img_tag(img_from_binary(@machine.image)) %>
   </li>
 
 </ul>
 
-<span><%= link "Edit", to: machine_path(@conn, :edit, @machine) %></span>
-<span><%= link "Back", to: machine_path(@conn, :index) %></span>
+<span><%= link dgettext("forms", "edit"), to: machine_path(@conn, :edit, @machine) %></span>
+<span><%= link dgettext("forms", "back"), to: machine_path(@conn, :index) %></span>

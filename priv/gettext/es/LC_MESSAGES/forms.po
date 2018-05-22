@@ -64,7 +64,7 @@ msgstr "Buscar Máquina por código o nombre"
 #, elixir-format
 #: lib/mak_web/templates/machine/form.html.eex:21
 msgid "image"
-msgstr ""
+msgstr "Foto"
 
 #, elixir-format
 #: lib/mak_web/templates/machine/index.html.eex:1
@@ -79,13 +79,16 @@ msgstr "Esta seguro? --Esta acción es irreversible"
 
 #, elixir-format
 #: lib/mak_web/templates/machine/index.html.eex:32
+#: lib/mak_web/templates/user/index.html.eex:21
 msgid "delete"
 msgstr "Borrar"
 
 #, elixir-format
+#: lib/mak_web/templates/machine/edit.html.eex:1
 #: lib/mak_web/templates/machine/index.html.eex:31
+#: lib/mak_web/templates/machine/show.html.eex:26
 #: lib/mak_web/templates/user/index.html.eex:20
-#: lib/mak_web/templates/user/index.html.eex:21
+#: lib/mak_web/templates/user/show.html.eex:17
 msgid "edit"
 msgstr "Editar"
 
@@ -104,3 +107,24 @@ msgstr "Nuevo Usuario"
 #: lib/mak_web/templates/user/index.html.eex:19
 msgid "show"
 msgstr "Ir"
+
+#, elixir-format
+#: lib/mak_web/templates/machine/edit.html.eex:5
+#: lib/mak_web/templates/machine/new.html.eex:5
+#: lib/mak_web/templates/machine/show.html.eex:27
+#: lib/mak_web/templates/user/edit.html.eex:5
+#: lib/mak_web/templates/user/new.html.eex:5
+#: lib/mak_web/templates/user/show.html.eex:18
+msgid "back"
+msgstr "Volver"
+
+#, elixir-format
+#: lib/mak_web/templates/machine/edit.html.eex:1
+#: lib/mak_web/templates/machine/new.html.eex:1
+msgid "machine"
+msgstr "Máquina"
+
+#, elixir-format
+#: lib/mak_web/templates/machine/new.html.eex:1
+msgid "new"
+msgstr "Nueva"

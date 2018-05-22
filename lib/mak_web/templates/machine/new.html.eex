@@ -1,5 +1,5 @@
-<h2>New Machine</h2>
+<h2><%= dgettext("forms", "new") %> <%= dgettext("forms", "machine")%></h2>
 
 <%= render "form.html", Map.put(assigns, :action, machine_path(@conn, :create)) %>
 
-<span><%= link "Back", to: machine_path(@conn, :index) %></span>
+<span><%= link dgettext("forms", "back"), to: machine_path(@conn, :index) %></span>
