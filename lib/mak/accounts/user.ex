@@ -17,6 +17,8 @@ defmodule Mak.Accounts.User do
     |> cast(attrs, [:username, :password])
     |> validate_required([:username, :password])
     |> put_pass_hash
+    |> unique_constraint(:username)
+
   end
 
   defp put_pass_hash(%Ecto.Changeset{valid?: true, changes: %{password: password}} = changeset) do
