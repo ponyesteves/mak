@@ -15,6 +15,21 @@ defmodule Mak.Base.Machine do
   def changeset(machine, attrs) do
     machine
     |> cast(attrs, [:code, :name, :desc])
+    |> put_code
     |> validate_required([:code, :name, :desc])
+    |> unique_constraint(:code)
+
+  end
+
+  def put_code(changeset) do
+    unless(get_field(changeset, :code)) do
+      change(changeset, %{code: gen_code() })
+    else
+      changeset
+    end
+  end
+
+  defp gen_code do
+    Ecto.UUID.generate |> binary_part(6,6)
   end
 end

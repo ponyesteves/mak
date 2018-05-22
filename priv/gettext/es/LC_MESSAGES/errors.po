@@ -15,7 +15,7 @@ msgid "can't be blank"
 msgstr "Campo requerido"
 
 msgid "has already been taken"
-msgstr ""
+msgstr "Este valor se encuentra duplicado"
 
 msgid "is invalid"
 msgstr ""

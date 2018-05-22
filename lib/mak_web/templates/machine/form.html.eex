@@ -7,7 +7,7 @@
 
   <div class="form-group">
     <%= label f, dgettext("forms", "code"), class: "control-label" %>
-    <%= text_input f, :code, class: "form-control" %>
+    <%= text_input f, :code, class: "form-control", readonly: "true" %>
     <%= error_tag f, :code %>
   </div>
 
