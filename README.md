@@ -30,3 +30,21 @@ mix i18n
 ### MIX_ENV=prod mix ecto.migrate
 ### mix phx.digest
 ### PORT=4001 MIX_ENV=prod mix phx.server
+
+## With Systemctl must set ENV there
+```shell
+[Unit]
+Description=Flow Dev
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/myApps/flow
+Environment="MIX_ENV=prod" "PORT=4001" "MYPASS=****"
+ExecStart=/usr/local/bin/mix phx.server
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
