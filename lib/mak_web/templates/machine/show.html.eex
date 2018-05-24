@@ -6,6 +6,8 @@
     </h2>
   </div>
   <div class="panel-body">
+  <%= link "Orden", to: machine_order_path(@conn, :new, @machine), class: "btn btn-default btn-xs" %>
+
     <div class="col-sm-6">
       <h4>
         <%= @machine.desc %>

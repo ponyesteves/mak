@@ -36,7 +36,9 @@ defmodule MakWeb.Router do
   scope "/", MakWeb do
     pipe_through([:browser, :auth])
 
-    resources("/machines", MachineController)
+    resources("/machines", MachineController) do
+      resources("/orders", OrderController, only: [:new, :create])
+    end
     resources("/users", UserController, only: [:index, :show, :delete])
     resources("/types", TypeController)
     resources("/orders", OrderController)

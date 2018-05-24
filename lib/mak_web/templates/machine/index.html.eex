@@ -8,7 +8,6 @@
     <%= search_input f, :q, placeholder: dgettext("forms", "find machine"), class: "form-control" %>
   </div>
 <% end %>
-
 <table class="table">
   <thead>
     <tr>
