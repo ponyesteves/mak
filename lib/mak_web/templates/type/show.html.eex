@@ -8,11 +8,6 @@
   </li>
 
   <li>
-    <strong>G:</strong>
-    <%= @type.g %>
-  </li>
-
-  <li>
     <strong>Name:</strong>
     <%= @type.name %>
   </li>

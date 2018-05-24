@@ -4,6 +4,8 @@ defmodule MakWeb.OrderController do
   alias Mak.Transactions
   alias Mak.Transactions.Order
 
+  plug :load_assoc, only: [:new, :edit]
+
   def index(conn, _params) do
     orders = Transactions.list_orders()
     render(conn, "index.html", orders: orders)
@@ -56,5 +58,9 @@ defmodule MakWeb.OrderController do
     conn
     |> put_flash(:info, "Order deleted successfully.")
     |> redirect(to: order_path(conn, :index))
+  end
+
+  defp load_assoc(conn, _) do
+    Plug.Conn.assign(conn, :types, Transactions.list_types |>  MakWeb.Helpers.to_select)
   end
 end

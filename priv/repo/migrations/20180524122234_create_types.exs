@@ -4,7 +4,6 @@ defmodule Mak.Repo.Migrations.CreateTypes do
   def change do
     create table(:types) do
       add :code, :string
-      add :g, :string
       add :name, :string
 
       timestamps()

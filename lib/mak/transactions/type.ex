@@ -5,7 +5,6 @@ defmodule Mak.Transactions.Type do
 
   schema "types" do
     field :code, :string
-    field :g, :string
     field :name, :string
 
     timestamps()
@@ -14,7 +13,7 @@ defmodule Mak.Transactions.Type do
   @doc false
   def changeset(type, attrs) do
     type
-    |> cast(attrs, [:code, :g, :name])
-    |> validate_required([:code, :g, :name])
+    |> cast(attrs, [:code, :name])
+    |> validate_required([:code, :name])
   end
 end
