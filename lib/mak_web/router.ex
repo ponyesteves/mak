@@ -28,14 +28,14 @@ defmodule MakWeb.Router do
     resources("/users", UserController, only: [:new, :create, :edit, :update])
     resources("/sessions", SessionController, only: [:new, :create])
 
-    get("/", SessionController, :new)
     delete("/sessions/drop", SessionController, :drop)
   end
-
+  
   # Private
   scope "/", MakWeb do
     pipe_through([:browser, :auth])
-
+    get("/", MachineController, :index)
+    
     resources("/machines", MachineController) do
       resources("/orders", OrderController, only: [:new, :create])
     end
