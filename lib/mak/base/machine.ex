@@ -15,24 +15,14 @@ defmodule Mak.Base.Machine do
   @doc false
   def changeset(machine, attrs) do
     machine
-    |> cast(attrs, [:code, :name, :desc])
-    |> parse_image(attrs)
+    |> cast(attrs, [:code, :name, :desc, :image])
+    |>validate_image_size(500)
     |> put_code
     |> validate_required([:code, :name, :desc])
     |> unique_constraint(:code)
   end
 
-  def parse_image(changeset, %{"image" => image}) do
-    %{size: size} = File.stat!(image.path)
-
-    changeset
-    |> validate_image_size(size, 1024)
-    |> change(%{image: File.read!(image.path)})
-  end
-
-  def parse_image(changeset, _), do: changeset
-
-  def put_code(changeset) do
+  defp put_code(changeset) do
     unless(get_field(changeset, :code)) do
       change(changeset, %{code: gen_code()})
     else
@@ -40,12 +30,14 @@ defmodule Mak.Base.Machine do
     end
   end
 
-  defp validate_image_size(changeset, size, size_limit_kb) do
-    if(size / 1000 > size_limit_kb) do
-      add_error(changeset, :image, dgettext("errors", "image should by smaller than %{size}", size: size_limit_kb))
-    else
-      changeset
-    end
+  defp validate_image_size(changeset, size_limit_kb) do
+    changeset
+    |> validate_change(:image, fn(:image, image) ->
+      cond do
+        byte_size(image)/1000 > size_limit_kb -> [image:  dgettext("errors", "image should by smaller than %{size}", size: size_limit_kb)]
+        true -> []
+      end
+    end)
   end
 
   defp gen_code do

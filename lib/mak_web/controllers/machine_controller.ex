@@ -17,7 +17,7 @@ defmodule MakWeb.MachineController do
   end
 
   def create(conn, %{"machine" => machine_params}) do
-    case Base.create_machine(machine_params) do
+    case Base.create_machine(parse_image(machine_params)) do
       {:ok, machine} ->
         conn
         |> put_flash(:info, dgettext("flash", "Machine created successfully."))
@@ -42,7 +42,7 @@ defmodule MakWeb.MachineController do
   def update(conn, %{"id" => id, "machine" => machine_params}) do
     machine = Base.get_machine!(id)
 
-    case Base.update_machine(machine, machine_params) do
+    case Base.update_machine(machine, parse_image(machine_params)) do
       {:ok, machine} ->
         conn
         |> put_flash(:info, dgettext("flash", "Machine updated successfully."))
@@ -60,5 +60,13 @@ defmodule MakWeb.MachineController do
     conn
     |> put_flash(:info, dgettext("flash", "Machine deleted successfully."))
     |> redirect(to: machine_path(conn, :index))
+  end
+
+  defp parse_image(machine_params) do
+    image = machine_params["image"]
+    case image do
+      nil ->  machine_params
+      _ -> Map.put(machine_params, "image", File.read!(image.path))
+    end
   end
 end
