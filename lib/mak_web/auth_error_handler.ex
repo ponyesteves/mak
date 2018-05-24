@@ -8,6 +8,6 @@ defmodule MakWeb.Guardian.AuthErrorHandler do
     # send_resp(conn, 401, body)
     conn
     |> put_flash(:error, "☠ Area Restringida ☠")
-    |> redirect(to: MakWeb.Router.Helpers.page_path(conn, :index))
+    |> redirect(to: MakWeb.Router.Helpers.session_path(conn, :new))
   end
 end

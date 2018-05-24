@@ -28,7 +28,7 @@ defmodule MakWeb.Router do
     resources("/users", UserController, only: [:new, :create, :edit, :update])
     resources("/sessions", SessionController, only: [:new, :create])
 
-    get("/", PageController, :index)
+    get("/", SessionController, :new)
     delete("/sessions/drop", SessionController, :drop)
   end
 

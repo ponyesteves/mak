@@ -27,6 +27,6 @@ defmodule MakWeb.SessionController do
     conn
     |> Auth.logout()
     |> put_flash(:info, dgettext("flash", "see you"))
-    |> redirect(to: page_path(conn, :index))
+    |> redirect(to: session_path(conn, :new))
   end
 end

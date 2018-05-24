@@ -16,7 +16,6 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><%= link dgettext("forms","login"), to: session_path(@conn, :new), class: "btn btn-default btn-flat" %></li>
           </ul>
         </nav>
         <span class="logo"></span>
