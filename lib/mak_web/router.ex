@@ -38,8 +38,8 @@ defmodule MakWeb.Router do
 
     resources("/machines", MachineController)
     resources("/users", UserController, only: [:index, :show, :delete])
-    resources "/types", TypeController
-
+    resources("/types", TypeController)
+    resources("/orders", OrderController)
   end
 
   # Other scopes may use custom stacks.
