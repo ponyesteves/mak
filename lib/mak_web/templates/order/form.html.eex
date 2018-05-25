@@ -5,6 +5,9 @@
     </div>
   <% end %>
 
+  <%= hidden_input f, :machine_id, class: "form-control" %>
+  <%= hidden_input f, :user_id, class: "form-control", value: @current_user.id %>
+
   <div class="form-group">
     <%= label f, :date, class: "control-label" %>
     <%= text_input f, :date, class: "form-control", type: "date" %>

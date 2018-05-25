@@ -38,7 +38,7 @@ defmodule Mak.Base do
       ** (Ecto.NoResultsError)
 
   """
-  def get_machine!(id), do: Repo.get!(Machine, id)
+  def get_machine!(id), do: Repo.get!(Machine, id) |> Repo.preload(orders: [:type])
 
   @doc """
   Creates a machine.

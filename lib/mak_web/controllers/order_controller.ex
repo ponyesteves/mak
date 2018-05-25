@@ -4,15 +4,15 @@ defmodule MakWeb.OrderController do
   alias Mak.Transactions
   alias Mak.Transactions.Order
 
-  plug :load_assoc, only: [:new, :edit]
+  plug(:load_assoc, only: [:new, :edit])
 
   def index(conn, _params) do
     orders = Transactions.list_orders()
     render(conn, "index.html", orders: orders)
   end
 
-  def new(conn, _params) do
-    changeset = Transactions.change_order(%Order{})
+  def new(conn, %{"machine_id" => machine_id}) do
+    changeset = Order.changeset(%Order{}, %{"machine_id" => machine_id})
     render(conn, "new.html", changeset: changeset)
   end
 
@@ -22,6 +22,7 @@ defmodule MakWeb.OrderController do
         conn
         |> put_flash(:info, "Order created successfully.")
         |> redirect(to: order_path(conn, :show, order))
+
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
@@ -46,6 +47,7 @@ defmodule MakWeb.OrderController do
         conn
         |> put_flash(:info, "Order updated successfully.")
         |> redirect(to: order_path(conn, :show, order))
+
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", order: order, changeset: changeset)
     end
@@ -61,6 +63,6 @@ defmodule MakWeb.OrderController do
   end
 
   defp load_assoc(conn, _) do
-    Plug.Conn.assign(conn, :types, Transactions.list_types |>  MakWeb.Helpers.to_select)
+    Plug.Conn.assign(conn, :types, Transactions.list_types() |> MakWeb.Helpers.to_select())
   end
 end

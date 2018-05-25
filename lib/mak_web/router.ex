@@ -37,7 +37,7 @@ defmodule MakWeb.Router do
     get("/", MachineController, :index)
     
     resources("/machines", MachineController) do
-      resources("/orders", OrderController, only: [:new, :create])
+      resources("/orders", OrderController, only: [:new])
     end
     resources("/users", UserController, only: [:index, :show, :delete])
     resources("/types", TypeController)

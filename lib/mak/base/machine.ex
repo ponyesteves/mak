@@ -8,6 +8,7 @@ defmodule Mak.Base.Machine do
     field(:desc, :string)
     field(:name, :string)
     field(:image, :binary)
+    has_many(:orders, Mak.Transactions.Order)
 
     timestamps()
   end
