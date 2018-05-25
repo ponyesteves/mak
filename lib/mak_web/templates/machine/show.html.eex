@@ -17,6 +17,16 @@
       <%= @machine.image && img_tag(img_from_binary(@machine.image), width: "300px") %>
     </div>
   </div>
+
+  <%= form_for @conn, machine_path(@conn, :show, @machine), [method: :get], fn f -> %>
+    <div class="input-group">
+      <span class="input-group-addon" aria-hidden="true">
+        <span class="glyphicon glyphicon-search "></span>
+      </span>
+      <%= search_input f, :q, placeholder: dgettext("forms", "find orders"), class: "form-control" %>
+    </div>
+  <%end%>
+  
   <table class="table table-striped">
     <thead>
       <tr>

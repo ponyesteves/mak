@@ -29,6 +29,8 @@ defmodule MakWeb.MachineController do
   end
 
   def show(conn, %{"id" => id}) do
+    # TODO use query param and search between orders 
+    # https://medium.com/@victoriawagman/filter-results-from-a-many-to-many-query-ecto-2eaa28cba59f
     machine = Base.get_machine!(id)
     render(conn, "show.html", machine: machine)
   end
