@@ -2,7 +2,7 @@ defmodule MakWeb.MachineController do
   use MakWeb, :controller
 
   import MakWeb.Gettext, only: [dgettext: 2]
-
+  
   alias Mak.Base
   alias Mak.Base.Machine
 
@@ -28,10 +28,10 @@ defmodule MakWeb.MachineController do
     end
   end
 
-  def show(conn, %{"id" => id}) do
+  def show(conn, %{"id" => id} = params) do
     # TODO use query param and search between orders 
     # https://medium.com/@victoriawagman/filter-results-from-a-many-to-many-query-ecto-2eaa28cba59f
-    machine = Base.get_machine!(id)
+    machine = Base.get_machine!(id, params["orders_query"])
     render(conn, "show.html", machine: machine)
   end
 
@@ -66,8 +66,9 @@ defmodule MakWeb.MachineController do
 
   defp parse_image(machine_params) do
     image = machine_params["image"]
+
     case image do
-      nil ->  machine_params
+      nil -> machine_params
       _ -> Map.put(machine_params, "image", File.read!(image.path))
     end
   end

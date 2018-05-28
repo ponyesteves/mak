@@ -23,7 +23,7 @@
       <span class="input-group-addon" aria-hidden="true">
         <span class="glyphicon glyphicon-search "></span>
       </span>
-      <%= search_input f, :q, placeholder: dgettext("forms", "find orders"), class: "form-control" %>
+      <%= search_input f, :orders_query, placeholder: dgettext("forms", "find orders"), class: "form-control" %>
     </div>
   <%end%>
   

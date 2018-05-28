@@ -19,6 +19,7 @@ defmodule Mak.Base do
   """
   def list_machines(code_name \\ "") do
     query = "%#{code_name}%"
+
     Machine
     |> where([m], ilike(m.code, ^query) or ilike(m.name, ^query))
     |> Repo.all()
@@ -38,7 +39,17 @@ defmodule Mak.Base do
       ** (Ecto.NoResultsError)
 
   """
-  def get_machine!(id), do: Repo.get!(Machine, id) |> Repo.preload(orders: [:type])
+  def get_machine!(id, orders_query) do
+    query =
+      from(
+        o in Mak.Transactions.Order,
+        where: fragment("? ~* ?", o.title, ^(orders_query || ".*"))
+      )
+
+    Machine
+    |> Repo.get!(id)
+    |> Repo.preload(orders: {query, [:type]})
+  end
 
   @doc """
   Creates a machine.
