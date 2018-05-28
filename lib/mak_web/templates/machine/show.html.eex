@@ -1,8 +1,13 @@
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
 <div class="panel panel-default">
   <div class="panel-heading">
     <h2>
-      <%= dgettext("forms", "machine") %> <%= @machine.name %> --
-      <%= dgettext("forms", "code")%>: <%= @machine.code %>
+      <%= @machine.name %> 
+      <span class="label label-info"><%= @machine.code %></span>
     </h2>
   </div>
   <div class="panel-body">
