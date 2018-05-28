@@ -3,7 +3,7 @@ defmodule Mak.Transactions.Order do
   import Ecto.Changeset
 
   schema "orders" do
-    field(:date, :date)
+    field(:date, :date, default: Mak.Helpers.today())
     field(:desc, :string)
     field(:title, :string)
 
