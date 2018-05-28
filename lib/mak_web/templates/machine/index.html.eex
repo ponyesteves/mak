@@ -20,13 +20,12 @@
   </thead>
   <tbody>
 <%= for machine <- @machines do %>
-    <tr>
+    <tr onclick="goto('<%= machine_path(@conn, :show, machine) %>')">
       <td><%= machine.code %></td>
       <td><%= machine.name %></td>
       <td><%= machine.desc %></td>
 
       <td class="text-right">
-        <span><%= link dgettext("forms", "show"), to: machine_path(@conn, :show, machine), class: "btn btn-default btn-xs" %></span>
         <span><%= link dgettext("forms", "edit"), to: machine_path(@conn, :edit, machine), class: "btn btn-default btn-xs" %></span>
         <span><%= link dgettext("forms", "delete"), to: machine_path(@conn, :delete, machine), method: :delete, data: [confirm: dgettext("forms", "Are you sure?")], class: "btn btn-danger btn-xs" %></span>
       </td>
@@ -36,3 +35,8 @@
 </table>
 
 <span><%= link dgettext("forms", "new") <> " " <> dgettext("forms", "machine"), to: machine_path(@conn, :new) %></span>
+<script>
+function goto(link) {
+  document.location.href=link
+}
+</script>

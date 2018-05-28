@@ -6,8 +6,6 @@
     </h2>
   </div>
   <div class="panel-body">
-  <%= link "Orden", to: machine_order_path(@conn, :new, @machine), class: "btn btn-default btn-xs" %>
-
     <div class="col-sm-6">
       <h4>
         <%= @machine.desc %>
@@ -26,7 +24,8 @@
       <%= search_input f, :orders_query, placeholder: dgettext("forms", "find orders"), class: "form-control" %>
     </div>
   <%end%>
-  
+
+  <%= link dgettext("forms", "new") <> " " <> dgettext("forms", "order"), to: machine_order_path(@conn, :new, @machine), class: "btn btn-danger pull-right" %>
   <table class="table table-striped">
     <thead>
       <tr>

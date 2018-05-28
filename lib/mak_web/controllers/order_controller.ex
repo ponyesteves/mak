@@ -13,7 +13,7 @@ defmodule MakWeb.OrderController do
 
   def new(conn, %{"machine_id" => machine_id}) do
     changeset = Order.changeset(%Order{}, %{"machine_id" => machine_id})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", changeset: changeset, machine_id: machine_id)
   end
 
   def create(conn, %{"order" => order_params}) do
