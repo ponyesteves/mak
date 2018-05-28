@@ -1,4 +1,5 @@
 import "phoenix_html"
+import "bootstrap/dist/js/bootstrap.min.js"
 
 import React from 'react'
 import ReactDOM from "react-dom"

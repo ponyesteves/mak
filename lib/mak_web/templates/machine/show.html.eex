@@ -1,67 +1,18 @@
-<ul class="nav nav-pills">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">
+  <span class="glyphicon glyphicon-home" />
+  </a></li>
+  <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Ordenes</a></li>
+  <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Mensajes</a></li>
+  <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Configuración</a></li>
 </ul>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h2>
-      <%= @machine.name %> 
-      <span class="label label-info"><%= @machine.code %></span>
-    </h2>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="home">
+    <%= render MakWeb.MachineView, "_home.html", machine: @machine %>
   </div>
-  <div class="panel-body">
-    <div class="col-sm-6">
-      <h4>
-        <%= @machine.desc %>
-      </h4>
-    </div>
-    <div class="col-sm-6">
-      <%= @machine.image && img_tag(img_from_binary(@machine.image), width: "300px") %>
-    </div>
+  <div role="tabpanel" class="tab-pane" id="profile">
+    <%= render MakWeb.MachineView, "_orders.html", conn: @conn, machine: @machine %>
   </div>
-
-  <%= form_for @conn, machine_path(@conn, :show, @machine), [method: :get], fn f -> %>
-    <div class="input-group">
-      <span class="input-group-addon" aria-hidden="true">
-        <span class="glyphicon glyphicon-search "></span>
-      </span>
-      <%= search_input f, :orders_query, placeholder: dgettext("forms", "find orders"), class: "form-control" %>
-    </div>
-  <%end%>
-
-  <%= link dgettext("forms", "new") <> " " <> dgettext("forms", "order"), to: machine_order_path(@conn, :new, @machine), class: "btn btn-danger pull-right" %>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th><%= dgettext("forms", "status") %></th>
-        <th><%= dgettext("forms", "title") %></th>
-        <th><%= dgettext("forms", "desc") %></th>
-        <th><%= dgettext("forms", "desc") %></th>
-      </tr>
-    </thead>
-    <tbody>
-    <%= for order <- @machine.orders do %>
-      <tr onclick="goto('<%= order_path(@conn, :edit, order) %>')">
-        <td scope="row"><%= order.status.name %></td>
-        <td><%= order.title %></td>
-        <td><%= order.desc %></td>
-        <td><%= order.type.name %></td>
-      </tr>
-    <% end %>
-    </tbody>
-  </table>
-
+  <div role="tabpanel" class="tab-pane" id="messages">...</div>
+  <div role="tabpanel" class="tab-pane" id="settings">...</div>
 </div>
-
-<span>
-  <%= link dgettext("forms", "edit"), to: machine_path(@conn, :edit, @machine) %>
-</span>
-<span>
-  <%= link dgettext("forms", "back"), to: machine_path(@conn, :index) %>
-</span>
-<script>
-function goto(link) {
-  document.location.href=link
-}
-</script>
