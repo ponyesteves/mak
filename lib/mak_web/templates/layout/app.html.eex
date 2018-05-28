@@ -14,11 +14,6 @@
   <body>
     <div class="container">
       <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><%= link dgettext("forms", "logout"), to: session_path(@conn, :drop), method: "delete", class: "btn btn-default btn-flat" %></li>
-          </ul>
-        </nav>
         <span class="logo"></span>
       </header>
 
@@ -31,6 +26,13 @@
         <%= render @view_module, @view_template, assigns %>
       </main>
 
+    <nav role="navigation">
+      <ul class="nav nav-pills pull-right">
+        <li>
+          <%= link dgettext("forms", "logout"), to: session_path(@conn, :drop), method: "delete", class: "btn   btn-default btn-flat" %>
+        </li>
+      </ul>
+    </nav>
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>

@@ -7,8 +7,10 @@ defmodule MakWeb.MachineController do
   alias Mak.Base.Machine
 
   def index(conn, params) do
-    machines = Base.list_machines(params["q"])
-    render(conn, "index.html", machines: machines)
+    query = params["q"]
+    # TODO: if query got to correct tab
+    machines = Base.list_machines(query)
+    render(conn, "index.html", machines: machines, query: query)
   end
 
   def new(conn, _params) do
