@@ -35,4 +35,4 @@
   </tbody>
 </table>
 
-<span><%= link dgettext("forms", "new machine"), to: machine_path(@conn, :new) %></span>
+<span><%= link dgettext("forms", "new") <> " " <> dgettext("forms", "machine"), to: machine_path(@conn, :new) %></span>

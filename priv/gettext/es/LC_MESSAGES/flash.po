@@ -17,12 +17,12 @@ msgid "Machine created successfully."
 msgstr "Maquinas creada!"
 
 #, elixir-format
-#: lib/mak_web/controllers/machine_controller.ex:61
+#: lib/mak_web/controllers/machine_controller.ex:63
 msgid "Machine deleted successfully."
 msgstr "Máquina borrada!"
 
 #, elixir-format
-#: lib/mak_web/controllers/machine_controller.ex:48
+#: lib/mak_web/controllers/machine_controller.ex:50
 msgid "Machine updated successfully."
 msgstr "Máquina actualizada!"
 

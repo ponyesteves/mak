@@ -3,9 +3,9 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Title</th>
-      <th>Desc</th>
+      <th><%= link dgettext("forms", "date") %></th>
+      <th><%= link dgettext("forms", "title") %></th>
+      <th><%= link dgettext("forms", "desc") %></th>
 
       <th></th>
     </tr>
@@ -18,13 +18,13 @@
       <td><%= order.desc %></td>
 
       <td class="text-right">
-        <span><%= link "Show", to: order_path(@conn, :show, order), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: order_path(@conn, :edit, order), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: order_path(@conn, :delete, order), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <span><%= link dgettext("forms", "show"), to: order_path(@conn, :show, order), class: "btn btn-default btn-xs" %></span>
+        <span><%= link dgettext("forms", "edit"), to: order_path(@conn, :edit, order), class: "btn btn-default btn-xs" %></span>
+        <span><%= link dgettext("forms", "delete"), to: order_path(@conn, :delete, order), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>
     </tr>
 <% end %>
   </tbody>
 </table>
 
-<span><%= link "New Order", to: order_path(@conn, :new) %></span>
+<span><%= link  dgettext("forms", "new") <> " " <> dgettext("forms", "order"), to: order_path(@conn, :new) %></span>

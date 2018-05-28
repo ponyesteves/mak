@@ -1,5 +1,5 @@
-<h2>New Order</h2>
+<h2><%= dgettext("forms", "new") %> <%= dgettext("forms", "order")%></h2>
 
 <%= render "form.html", Map.put(assigns, :action, order_path(@conn, :create)) %>
 
-<span><%= link "Back", to: order_path(@conn, :index) %></span>
+<span><%= link dgettext("forms", "back"), to: order_path(@conn, :index) %></span>

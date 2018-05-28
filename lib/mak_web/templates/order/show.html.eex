@@ -1,23 +1,23 @@
-<h2>Show Order</h2>
+<h2><%= dgettext("forms", "order") %></h2>
 
 <ul>
 
   <li>
-    <strong>Date:</strong>
+    <strong><%= dgettext("forms", "date") %>:</strong>
     <%= @order.date %>
   </li>
 
   <li>
-    <strong>Title:</strong>
+    <strong><%= dgettext("forms", "title") %>:</strong>
     <%= @order.title %>
   </li>
 
   <li>
-    <strong>Desc:</strong>
+    <strong><%= dgettext("forms", "desc") %>:</strong>
     <%= @order.desc %>
   </li>
 
 </ul>
 
-<span><%= link "Edit", to: order_path(@conn, :edit, @order) %></span>
-<span><%= link "Back", to: machine_path(@conn, :show, @order.machine_id) %></span>
+<span><%= link dgettext("forms", "new"), to: order_path(@conn, :edit, @order) %></span>
+<span><%= link dgettext("forms", "back"), to: machine_path(@conn, :show, @order.machine_id) %></span>
