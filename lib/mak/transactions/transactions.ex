@@ -6,100 +6,102 @@ defmodule Mak.Transactions do
   import Ecto.Query, warn: false
   alias Mak.Repo
 
-  alias Mak.Transactions.Type
+  alias Mak.Transactions.Code
 
   @doc """
-  Returns the list of types.
+  Returns the list of codes.
 
   ## Examples
 
-      iex> list_types()
-      [%Type{}, ...]
+      iex> list_codes()
+      [%Code{}, ...]
 
   """
-  def list_types do
-    Repo.all(Type)
+  def list_codes(scope) do
+    Repo.all(from(c in Code, where: c.scope == ^scope))
   end
 
   @doc """
-  Gets a single type.
+  Gets a single code.
 
-  Raises `Ecto.NoResultsError` if the Type does not exist.
+  Raises `Ecto.NoResultsError` if the Code does not exist.
 
   ## Examples
 
-      iex> get_type!(123)
-      %Type{}
+      iex> get_code!(123)
+      %Code{}
 
-      iex> get_type!(456)
+      iex> get_code!(456)
       ** (Ecto.NoResultsError)
 
   """
-  def get_type!(id), do: Repo.get!(Type, id)
+  def get_code!(id), do: Repo.get!(Code, id)
+
+  def get_code_by_name!(name), do: Code |> where([c], ilike(c.name, ^name)) |> Repo.one!()
 
   @doc """
-  Creates a type.
+  Creates a code.
 
   ## Examples
 
-      iex> create_type(%{field: value})
-      {:ok, %Type{}}
+      iex> create_code(%{field: value})
+      {:ok, %Code{}}
 
-      iex> create_type(%{field: bad_value})
+      iex> create_code(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_type(attrs \\ %{}) do
-    %Type{}
-    |> Type.changeset(attrs)
+  def create_code(attrs \\ %{}) do
+    %Code{}
+    |> Code.changeset(attrs)
     |> Repo.insert()
   end
 
   @doc """
-  Updates a type.
+  Updates a code.
 
   ## Examples
 
-      iex> update_type(type, %{field: new_value})
-      {:ok, %Type{}}
+      iex> update_code(code, %{field: new_value})
+      {:ok, %Code{}}
 
-      iex> update_type(type, %{field: bad_value})
+      iex> update_code(code, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def update_type(%Type{} = type, attrs) do
-    type
-    |> Type.changeset(attrs)
+  def update_code(%Code{} = code, attrs) do
+    code
+    |> Code.changeset(attrs)
     |> Repo.update()
   end
 
   @doc """
-  Deletes a Type.
+  Deletes a Code.
 
   ## Examples
 
-      iex> delete_type(type)
-      {:ok, %Type{}}
+      iex> delete_code(code)
+      {:ok, %Code{}}
 
-      iex> delete_type(type)
+      iex> delete_code(code)
       {:error, %Ecto.Changeset{}}
 
   """
-  def delete_type(%Type{} = type) do
-    Repo.delete(type)
+  def delete_code(%Code{} = code) do
+    Repo.delete(code)
   end
 
   @doc """
-  Returns an `%Ecto.Changeset{}` for tracking type changes.
+  Returns an `%Ecto.Changeset{}` for tracking code changes.
 
   ## Examples
 
-      iex> change_type(type)
-      %Ecto.Changeset{source: %Type{}}
+      iex> change_code(code)
+      %Ecto.Changeset{source: %Code{}}
 
   """
-  def change_type(%Type{} = type) do
-    Type.changeset(type, %{})
+  def change_code(%Code{} = code) do
+    Code.changeset(code, %{})
   end
 
   alias Mak.Transactions.Order

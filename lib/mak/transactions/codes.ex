@@ -1,12 +1,11 @@
-defmodule Mak.Transactions.Type do
+defmodule Mak.Transactions.Code do
   use Ecto.Schema
   import Ecto.Changeset
 
 
-  schema "types" do
-    field :code, :string
+  schema "codes" do
     field :name, :string
-
+    field :scope, :string
     timestamps()
   end
 

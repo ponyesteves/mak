@@ -17,7 +17,9 @@ defmodule MakWeb.OrderController do
   end
 
   def create(conn, %{"order" => order_params}) do
-    case Transactions.create_order(order_params) do
+    pendiente_id = Mak.Transactions.get_code_by_name!("Pendiente").id
+
+    case Transactions.create_order(Map.put(order_params, "status_id", pendiente_id)) do
       {:ok, order} ->
         conn
         |> put_flash(:info, "Order created successfully.")
@@ -63,6 +65,6 @@ defmodule MakWeb.OrderController do
   end
 
   defp load_assoc(conn, _) do
-    Plug.Conn.assign(conn, :types, Transactions.list_types() |> MakWeb.Helpers.to_select())
+    Plug.Conn.assign(conn, :types, Transactions.list_codes("type") |> MakWeb.Helpers.to_select())
   end
 end
