@@ -48,7 +48,7 @@ defmodule Mak.Base do
 
     Machine
     |> Repo.get!(id)
-    |> Repo.preload(orders: {query, [:type]})
+    |> Repo.preload(orders: {query, [:type, :status]})
   end
 
   @doc """

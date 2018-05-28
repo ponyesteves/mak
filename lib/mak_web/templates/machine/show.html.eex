@@ -30,7 +30,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>#</th>
+        <th><%= dgettext("forms", "status") %></th>
         <th><%= dgettext("forms", "title") %></th>
         <th><%= dgettext("forms", "desc") %></th>
         <th><%= dgettext("forms", "desc") %></th>
@@ -39,7 +39,7 @@
     <tbody>
     <%= for order <- @machine.orders do %>
       <tr onclick="goto('<%= order_path(@conn, :edit, order) %>')">
-        <th scope="row">1</th>
+        <td scope="row"><%= order.status.name %></td>
         <td><%= order.title %></td>
         <td><%= order.desc %></td>
         <td><%= order.type.name %></td>
