@@ -1,60 +1,60 @@
-defmodule MakWeb.TypeController do
+defmodule MakWeb.CodeController do
   use MakWeb, :controller
 
   alias Mak.Transactions
-  alias Mak.Transactions.Type
+  alias Mak.Transactions.Code
 
   def index(conn, _params) do
-    types = Transactions.list_types()
-    render(conn, "index.html", types: types)
+    codes = Transactions.list_codes()
+    render(conn, "index.html", codes: codes)
   end
 
   def new(conn, _params) do
-    changeset = Transactions.change_type(%Type{})
+    changeset = Transactions.change_code(%Code{})
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"type" => type_params}) do
-    case Transactions.create_type(type_params) do
-      {:ok, type} ->
+  def create(conn, %{"code" => code_params}) do
+    case Transactions.create_code(code_params) do
+      {:ok, code} ->
         conn
-        |> put_flash(:info, "Type created successfully.")
-        |> redirect(to: type_path(conn, :show, type))
+        |> put_flash(:info, "Code created successfully.")
+        |> redirect(to: code_path(conn, :show, code))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
   end
 
   def show(conn, %{"id" => id}) do
-    type = Transactions.get_type!(id)
-    render(conn, "show.html", type: type)
+    code = Transactions.get_code!(id)
+    render(conn, "show.html", code: code)
   end
 
   def edit(conn, %{"id" => id}) do
-    type = Transactions.get_type!(id)
-    changeset = Transactions.change_type(type)
-    render(conn, "edit.html", type: type, changeset: changeset)
+    code = Transactions.get_code!(id)
+    changeset = Transactions.change_code(code)
+    render(conn, "edit.html", code: code, changeset: changeset)
   end
 
-  def update(conn, %{"id" => id, "type" => type_params}) do
-    type = Transactions.get_type!(id)
+  def update(conn, %{"id" => id, "code" => code_params}) do
+    code = Transactions.get_code!(id)
 
-    case Transactions.update_type(type, type_params) do
-      {:ok, type} ->
+    case Transactions.update_code(code, code_params) do
+      {:ok, code} ->
         conn
-        |> put_flash(:info, "Type updated successfully.")
-        |> redirect(to: type_path(conn, :show, type))
+        |> put_flash(:info, "Code updated successfully.")
+        |> redirect(to: code_path(conn, :show, code))
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", type: type, changeset: changeset)
+        render(conn, "edit.html", code: code, changeset: changeset)
     end
   end
 
   def delete(conn, %{"id" => id}) do
-    type = Transactions.get_type!(id)
-    {:ok, _type} = Transactions.delete_type(type)
+    code = Transactions.get_code!(id)
+    {:ok, _code} = Transactions.delete_code(code)
 
     conn
-    |> put_flash(:info, "Type deleted successfully.")
-    |> redirect(to: type_path(conn, :index))
+    |> put_flash(:info, "Code deleted successfully.")
+    |> redirect(to: code_path(conn, :index))
   end
 end

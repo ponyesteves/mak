@@ -40,7 +40,7 @@ defmodule MakWeb.Router do
       resources("/orders", OrderController, only: [:new])
     end
     resources("/users", UserController, only: [:index, :show, :delete])
-    resources("/types", TypeController)
+    resources("/codes", CodeController)
     resources("/orders", OrderController)
   end
 

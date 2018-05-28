@@ -1,0 +1,16 @@
+<h2>Show Type</h2>
+
+<ul>
+  <li>
+    <strong>Name:</strong>
+    <%= @code.name %>
+  </li>
+  <li>
+    <strong>Scope:</strong>
+    <%= @code.scope %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: code_path(@conn, :edit, @code) %></span>
+<span><%= link "Back", to: code_path(@conn, :index) %></span>
