@@ -39,7 +39,7 @@ defmodule Mak.Base do
       ** (Ecto.NoResultsError)
 
   """
-  def get_machine!(id, orders_query) do
+  def get_machine!(id, orders_query \\ nil) do
     query =
       from(
         o in Mak.Transactions.Order,
