@@ -2,7 +2,7 @@ defmodule MakWeb.MachineController do
   use MakWeb, :controller
 
   import MakWeb.Gettext, only: [dgettext: 2]
-  
+
   alias Mak.Base
   alias Mak.Base.Machine
 
@@ -29,10 +29,11 @@ defmodule MakWeb.MachineController do
   end
 
   def show(conn, %{"id" => id} = params) do
-    # TODO use query param and search between orders 
+    # TODO use query param and search between orders
     # https://medium.com/@victoriawagman/filter-results-from-a-many-to-many-query-ecto-2eaa28cba59f
     machine = Base.get_machine!(id, params["orders_query"])
-    render(conn, "show.html", machine: machine)
+    changeset = Base.change_machine(machine)
+    render(conn, "show.html", machine: machine, changeset: changeset)
   end
 
   def edit(conn, %{"id" => id}) do

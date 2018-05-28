@@ -2,17 +2,19 @@
   <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">
   <span class="glyphicon glyphicon-home" />
   </a></li>
-  <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Ordenes</a></li>
+  <li role="presentation"><a href="#orders" aria-controls="orders" role="tab" data-toggle="tab">Ordenes</a></li>
   <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Mensajes</a></li>
   <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Configuración</a></li>
 </ul>
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane active" id="home">
-    <%= render MakWeb.MachineView, "_home.html", machine: @machine %>
+    <%= render "_home.html", machine: @machine %>
   </div>
-  <div role="tabpanel" class="tab-pane" id="profile">
-    <%= render MakWeb.MachineView, "_orders.html", conn: @conn, machine: @machine %>
+  <div role="tabpanel" class="tab-pane" id="orders">
+    <%= render "_orders.html", conn: @conn, machine: @machine %>
   </div>
   <div role="tabpanel" class="tab-pane" id="messages">...</div>
-  <div role="tabpanel" class="tab-pane" id="settings">...</div>
+  <div role="tabpanel" class="tab-pane" id="settings">
+    <%= render "form.html", Map.put(assigns, :action, machine_path(@conn, :update, @machine)) %>
+  </div>
 </div>

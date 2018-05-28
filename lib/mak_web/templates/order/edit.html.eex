@@ -2,4 +2,4 @@
 
 <%= render "form.html", Map.put(assigns, :action, order_path(@conn, :update, @order)) %>
 
-<span><%= link "Back", to: machine_path(@conn, :show, @order.machine_id) %></span>
+<span><%= link "Back", to: machine_path(@conn, :show, @order.machine_id) <> "#orders" %></span>
