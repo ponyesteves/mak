@@ -2,7 +2,6 @@ defmodule Mak.Transactions.Code do
   use Ecto.Schema
   import Ecto.Changeset
 
-
   schema "codes" do
     field :name, :string
     field :scope, :string

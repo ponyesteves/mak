@@ -8,7 +8,6 @@ defmodule MakWeb.MachineController do
 
   def index(conn, params) do
     query = params["q"]
-    # TODO: if query got to correct tab
     machines = Base.list_machines(query)
     render(conn, "index.html", machines: machines, query: query)
   end
@@ -31,8 +30,7 @@ defmodule MakWeb.MachineController do
   end
 
   def show(conn, %{"id" => id} = params) do
-    # TODO use query param and search between orders
-    # https://medium.com/@victoriawagman/filter-results-from-a-many-to-many-query-ecto-2eaa28cba59f
+    IO.inspect id
     machine = Base.get_machine!(id, params["orders_query"])
     changeset = Base.change_machine(machine)
     render(conn, "show.html", machine: machine, changeset: changeset)

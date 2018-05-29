@@ -21,7 +21,7 @@ defmodule Mak.Base do
     query = "%#{code_name}%"
 
     Machine
-    |> where([m], ilike(m.code, ^query) or ilike(m.name, ^query))
+    |> where([m], ilike(m.id, ^query) or ilike(m.name, ^query))
     |> Repo.all()
   end
 
@@ -70,9 +70,14 @@ defmodule Mak.Base do
   end
 
   def upsert_machine(attrs \\ %{}) do
-    %Machine{}
-    |> Machine.changeset(attrs)
-    |> Repo.insert_or_update
+    IO.inspect attrs["id"]
+    case Repo.get(Machine, attrs["id"]) do
+      nil ->
+        create_machine(attrs)
+
+      machine ->
+        update_machine(machine, attrs)
+    end
   end
 
   @doc """

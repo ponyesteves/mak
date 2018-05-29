@@ -1,10 +1,10 @@
-defmodule Mak.Repo.Migrations.CreateTypes do
+defmodule Mak.Repo.Migrations.CreateCodes do
   use Ecto.Migration
 
   def change do
-    create table(:types) do
-      add :code, :string
+    create table(:codes) do
       add :name, :string
+      add :scope, :string
 
       timestamps()
     end

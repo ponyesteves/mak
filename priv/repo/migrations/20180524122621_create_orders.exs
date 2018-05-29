@@ -5,10 +5,11 @@ defmodule Mak.Repo.Migrations.CreateOrders do
     create table(:orders) do
       add :date, :date
       add :title, :string
-      add :desc, :string
-      add :type_id, references(:types, on_delete: :nothing)
-      add :machine_id, references(:machines, on_delete: :nothing)
+      add :desc, :text
+      add :type_id, references(:codes, on_delete: :nothing)
+      add :machine_id, references(:machines, type: :string, on_delete: :nothing)
       add :user_id, references(:users, on_delete: :nothing)
+      add :status_id, references(:codes, on_delete: :nothing)
 
       timestamps()
     end

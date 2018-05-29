@@ -1,5 +1,8 @@
 defmodule MakWeb.ImportController do
   use MakWeb, :controller
+
+  alias Mak.Base.Machine
+
   @client_id "dc0df9bf90795fe5c2434613f2d5c623"
   @client_secret "382b70b31919f0e7453160d742cc5503"
   @ep "https://3.teamplace.finneg.com/BSA/api/maquinas/list?ACCESS_TOKEN="
@@ -10,6 +13,7 @@ defmodule MakWeb.ImportController do
     |> get_data
     |> Enum.take(5)
     |> Enum.map(&translate/1)
+    |> IO.inspect
     |> Enum.map(&Mak.Base.upsert_machine/1)
 
     json conn, %{id: 123}
@@ -28,13 +32,12 @@ defmodule MakWeb.ImportController do
     |> Map.get(:body)
   end
 
-  defp get_end_point(token), do: @ep <> token
+  defp get_end_point(token), do: @ep <> token |> IO.inspect
 
   defp translate(ceres_obj) do
     %{
       "id" => ceres_obj["codigo"],
-      "code" => ceres_obj["codigo"],
-      "name" => ceres_obj["nombre"],
+      "name"=> ceres_obj["nombre"],
       "desc" => ceres_obj["descripcion"]
     }
   end

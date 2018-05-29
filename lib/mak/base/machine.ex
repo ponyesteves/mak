@@ -3,8 +3,10 @@ defmodule Mak.Base.Machine do
   import Ecto.Changeset
   import MakWeb.Gettext, only: [dgettext: 3]
 
+  @primary_key {:id, :string, []}
+  @derive {Phoenix.Param, key: :id}
+
   schema "machines" do
-    field(:code, :string)
     field(:desc, :string)
     field(:name, :string)
     field(:image, :binary)
@@ -16,19 +18,9 @@ defmodule Mak.Base.Machine do
   @doc false
   def changeset(machine, attrs) do
     machine
-    |> cast(attrs, [:code, :name, :desc, :image])
-    |>validate_image_size(500)
-    |> put_code
-    |> validate_required([:code, :name, :desc])
-    |> unique_constraint(:code)
-  end
-
-  defp put_code(changeset) do
-    unless(get_field(changeset, :code)) do
-      change(changeset, %{code: gen_code()})
-    else
-      changeset
-    end
+    |> cast(attrs, [:id, :name, :desc, :image])
+    |> validate_image_size(500)
+    |> validate_required([:name, :desc])
   end
 
   defp validate_image_size(changeset, size_limit_kb) do
@@ -40,13 +32,4 @@ defmodule Mak.Base.Machine do
       end
     end)
   end
-
-  defp gen_code do
-    Ecto.UUID.generate() |> binary_part(6, 6)
-  end
-
-  # For slugging
-  # defimpl Phoenix.Param, for: Mak.Base.Machine do
-  #   def to_param(%{code: code}), do: code
-  # end
 end

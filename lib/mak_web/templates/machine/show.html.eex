@@ -39,6 +39,6 @@
     <%= render "form.html", Map.put(assigns, :action, machine_path(@conn, :update, @machine)) %>
   </div>
   <div role="tabpanel" class="tab-pane" id="qr">
-    <%= render "_qr.html", code: @machine.code %>
+    <%= render "_qr.html", id: @machine.id %>
   </div>
 </div>

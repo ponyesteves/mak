@@ -9,7 +9,7 @@ defmodule Mak.Transactions.Order do
 
     belongs_to(:type, Mak.Transactions.Code)
     belongs_to(:status, Mak.Transactions.Code)
-    belongs_to(:machine, Mak.Base.Machine)
+    belongs_to(:machine, Mak.Base.Machine, type: :string)
     belongs_to(:user, Mak.Accounts.User)
 
     timestamps()
