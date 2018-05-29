@@ -8,29 +8,21 @@
     <%= search_input f, :q, placeholder: dgettext("forms", "find machine"), class: "form-control" %>
   </div>
 <% end %>
-<%= link dgettext("forms", "new") <> " " <> dgettext("forms", "machine"), to: machine_path(@conn, :new), class: "btn btn-danger pull-right" %>
-<table class="table">
-  <thead>
-    <tr>
-      <th><%= dgettext("forms", "code") %></th>
-      <th><%= dgettext("forms", "name") %></th>
-      <th><%= dgettext("forms", "desc") %></th>
+<div class="row">
+  <div class="col-md-12">
+    <%= link dgettext("forms", "new") <> " " <> dgettext("forms", "machine"), to: machine_path(@conn, :new), class: "btn btn-danger pull-right" %>
+</div>
+</div>
+<div class="row">
 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
 <%= for machine <- @machines do %>
-    <tr onclick="window.goto('<%= machine_path(@conn, :show, machine) %>')">
-      <td><%= machine.code %></td>
-      <td><%= machine.name %></td>
-      <td><%= machine.desc %></td>
-
-      <td class="text-right">
-        <span><%= link dgettext("forms", "edit"), to: machine_path(@conn, :edit, machine), class: "btn btn-default btn-xs" %></span>
-        <span><%= link dgettext("forms", "delete"), to: machine_path(@conn, :delete, machine), method: :delete, data: [confirm: dgettext("forms", "Are you sure?")], class: "btn btn-danger btn-xs" %></span>
-      </td>
-    </tr>
+<div class="col-md-3">
+  <div class="panel panel-primary" onclick="window.goto('<%= machine_path(@conn, :show, machine) %>')">
+    <div class="panel-heading"><%= machine.name %></div>
+      <div class="panel-body">
+        <p><%= String.slice(machine.desc, 0..40) <> "..." %></p>
+      </div>
+    </div>
+  </div>
 <% end %>
-  </tbody>
-</table>
+</div>
