@@ -8,6 +8,7 @@
     <%= search_input f, :q, placeholder: dgettext("forms", "find machine"), class: "form-control" %>
   </div>
 <% end %>
+<%= link dgettext("forms", "new") <> " " <> dgettext("forms", "machine"), to: machine_path(@conn, :new), class: "btn btn-danger pull-right" %>
 <table class="table">
   <thead>
     <tr>
@@ -20,7 +21,7 @@
   </thead>
   <tbody>
 <%= for machine <- @machines do %>
-    <tr onclick="goto('<%= machine_path(@conn, :show, machine) %>')">
+    <tr onclick="window.goto('<%= machine_path(@conn, :show, machine) %>')">
       <td><%= machine.code %></td>
       <td><%= machine.name %></td>
       <td><%= machine.desc %></td>
@@ -33,10 +34,3 @@
 <% end %>
   </tbody>
 </table>
-
-<span><%= link dgettext("forms", "new") <> " " <> dgettext("forms", "machine"), to: machine_path(@conn, :new) %></span>
-<script>
-function goto(link) {
-  document.location.href=link
-}
-</script>

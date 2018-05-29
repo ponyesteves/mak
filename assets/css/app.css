@@ -1,6 +1,6 @@
 input[type=search]{
   width: 90%;
-  background-color:aliceblue;
+  /* background-color:aliceblue; */
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
