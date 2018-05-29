@@ -29,7 +29,9 @@
     <nav role="navigation">
       <ul class="nav nav-pills pull-right">
         <li>
-          <%= link dgettext("forms", "logout"), to: session_path(@conn, :drop), method: "delete", class: "btn   btn-default btn-flat" %>
+          <%= link to: session_path(@conn, :drop), method: "delete", class: "btn btn-danger btn-flat" do %>
+            <span class="glyphicon glyphicon-log-out">
+          <% end %>
         </li>
       </ul>
     </nav>

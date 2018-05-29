@@ -16,7 +16,7 @@ defmodule MakWeb.ImportController do
     |> IO.inspect
     |> Enum.map(&Mak.Base.upsert_machine/1)
 
-    json conn, %{id: 123}
+    redirect(conn, to: machine_path(conn, :index))
   end
 
 
