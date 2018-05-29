@@ -30,12 +30,12 @@ defmodule MakWeb.Router do
 
     delete("/sessions/drop", SessionController, :drop)
   end
-  
+
   # Private
   scope "/", MakWeb do
     pipe_through([:browser, :auth])
     get("/", MachineController, :index)
-    
+    get("/import", ImportController, :machines)
     resources("/machines", MachineController) do
       resources("/orders", OrderController, only: [:new])
     end

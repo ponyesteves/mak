@@ -69,6 +69,12 @@ defmodule Mak.Base do
     |> Repo.insert()
   end
 
+  def upsert_machine(attrs \\ %{}) do
+    %Machine{}
+    |> Machine.changeset(attrs)
+    |> Repo.insert_or_update
+  end
+
   @doc """
   Updates a machine.
 
