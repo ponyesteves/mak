@@ -2,7 +2,7 @@
   <div class="panel-heading">
     <h2>
       <%= @machine.name %>
-      <span class="label label-info"><%= @machine.id %></span>
+      <span class="label label-info pull-right"><%= @machine.id %></span>
     </h2>
   </div>
   <div class="panel-body">

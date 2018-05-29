@@ -11,7 +11,7 @@ defmodule MakWeb.ImportController do
     get_token
     |> get_end_point
     |> get_data
-    |> Enum.take(5)
+    # |> Enum.take(5)
     |> Enum.map(&translate/1)
     |> IO.inspect
     |> Enum.map(&Mak.Base.upsert_machine/1)

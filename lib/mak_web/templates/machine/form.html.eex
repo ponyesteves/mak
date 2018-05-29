@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= label f, dgettext("forms", "name"), class: "control-label" %>
-    <%= text_input f, :name, class: "form-control" %>
+    <%= text_input f, :name, class: "form-control", readonly: "true" %>
     <%= error_tag f, :name %>
   </div>
 
@@ -25,7 +25,7 @@
 
   <div class="form-group">
     <%= label f, dgettext("forms", "desc"), class: "control-label" %>
-    <%= textarea f, :desc, class: "form-control", rows: 10 %>
+    <%= textarea f, :desc, class: "form-control", rows: 10, readonly: "true" %>
     <%= error_tag f, :desc %>
   </div>
 

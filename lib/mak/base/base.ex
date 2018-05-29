@@ -22,6 +22,7 @@ defmodule Mak.Base do
 
     Machine
     |> where([m], ilike(m.id, ^query) or ilike(m.name, ^query))
+    |> limit(20)
     |> Repo.all()
   end
 

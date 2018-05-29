@@ -21,9 +21,9 @@
 <%= for machine <- @machines do %>
 <div class="col-md-3">
   <div class="panel panel-primary" onclick="window.goto('<%= machine_path(@conn, :show, machine) %>')">
-    <div class="panel-heading"><%= machine.name %></div>
+    <div class="panel-heading" style="height:70px"><%= machine.name %></div>
       <div class="panel-body" style="height:100px">
-        <p><%= String.slice(machine.desc, 0..40) <> "..." %></p>
+        <p><%= String.slice(machine.desc, 0..40) <> "  ..." %> </p>
       </div>
     </div>
   </div>

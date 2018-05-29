@@ -27,6 +27,13 @@
       </main>
 
     <nav role="navigation">
+    <ul class="nav nav-pills pull-right">
+        <li>
+          <%= link to: machine_path(@conn, :index), class: "btn btn-success btn-flat" do %>
+            <span class="glyphicon glyphicon-th-large">
+          <% end %>
+        </li>
+      </ul>
       <ul class="nav nav-pills pull-right">
         <li>
           <%= link to: session_path(@conn, :drop), method: "delete", class: "btn btn-danger btn-flat" do %>
