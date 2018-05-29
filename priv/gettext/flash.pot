@@ -11,17 +11,17 @@ msgid ""
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/controllers/machine_controller.ex:23
+#: lib/mak_web/controllers/machine_controller.ex:24
 msgid "Machine created successfully."
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/controllers/machine_controller.ex:63
+#: lib/mak_web/controllers/machine_controller.ex:64
 msgid "Machine deleted successfully."
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/controllers/machine_controller.ex:50
+#: lib/mak_web/controllers/machine_controller.ex:51
 msgid "Machine updated successfully."
 msgstr ""
 

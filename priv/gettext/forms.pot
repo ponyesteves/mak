@@ -11,11 +11,6 @@ msgid ""
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/layout/app.html.eex:19
-msgid "logout"
-msgstr ""
-
-#, elixir-format
 #: lib/mak_web/templates/machine/form.html.eex:33
 #: lib/mak_web/templates/order/form.html.eex:37
 #: lib/mak_web/templates/session/new.html.eex:16
@@ -24,16 +19,13 @@ msgstr ""
 
 #, elixir-format
 #: lib/mak_web/templates/machine/form.html.eex:9
-#: lib/mak_web/templates/machine/index.html.eex:14
-#: lib/mak_web/templates/machine/show.html.eex:5
 msgid "code"
 msgstr ""
 
 #, elixir-format
+#: lib/mak_web/templates/machine/_orders.html.eex:17
+#: lib/mak_web/templates/machine/_orders.html.eex:18
 #: lib/mak_web/templates/machine/form.html.eex:27
-#: lib/mak_web/templates/machine/index.html.eex:16
-#: lib/mak_web/templates/machine/show.html.eex:35
-#: lib/mak_web/templates/machine/show.html.eex:36
 #: lib/mak_web/templates/order/form.html.eex:24
 #: lib/mak_web/templates/order/index.html.eex:8
 #: lib/mak_web/templates/order/show.html.eex:16
@@ -42,7 +34,6 @@ msgstr ""
 
 #, elixir-format
 #: lib/mak_web/templates/machine/form.html.eex:15
-#: lib/mak_web/templates/machine/index.html.eex:15
 msgid "name"
 msgstr ""
 
@@ -77,22 +68,19 @@ msgid "listing machines"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/machine/index.html.eex:31
 #: lib/mak_web/templates/user/index.html.eex:21
 msgid "Are you sure?"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/machine/index.html.eex:31
 #: lib/mak_web/templates/order/index.html.eex:23
 #: lib/mak_web/templates/user/index.html.eex:21
 msgid "delete"
 msgstr ""
 
 #, elixir-format
+#: lib/mak_web/templates/machine/_orders.html.eex:34
 #: lib/mak_web/templates/machine/edit.html.eex:1
-#: lib/mak_web/templates/machine/index.html.eex:30
-#: lib/mak_web/templates/machine/show.html.eex:54
 #: lib/mak_web/templates/order/edit.html.eex:1
 #: lib/mak_web/templates/order/index.html.eex:22
 #: lib/mak_web/templates/user/index.html.eex:20
@@ -106,16 +94,15 @@ msgid "new user"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/machine/index.html.eex:29
 #: lib/mak_web/templates/order/index.html.eex:21
 #: lib/mak_web/templates/user/index.html.eex:19
 msgid "show"
 msgstr ""
 
 #, elixir-format
+#: lib/mak_web/templates/machine/_orders.html.eex:37
 #: lib/mak_web/templates/machine/edit.html.eex:5
 #: lib/mak_web/templates/machine/new.html.eex:5
-#: lib/mak_web/templates/machine/show.html.eex:57
 #: lib/mak_web/templates/order/new.html.eex:5
 #: lib/mak_web/templates/order/show.html.eex:23
 #: lib/mak_web/templates/user/edit.html.eex:5
@@ -126,14 +113,12 @@ msgstr ""
 
 #, elixir-format
 #: lib/mak_web/templates/machine/edit.html.eex:1
-#: lib/mak_web/templates/machine/index.html.eex:38
 #: lib/mak_web/templates/machine/new.html.eex:1
-#: lib/mak_web/templates/machine/show.html.eex:4
 msgid "machine"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/machine/index.html.eex:38
+#: lib/mak_web/templates/machine/_orders.html.eex:10
 #: lib/mak_web/templates/machine/new.html.eex:1
 #: lib/mak_web/templates/order/index.html.eex:30
 #: lib/mak_web/templates/order/new.html.eex:1
@@ -142,17 +127,17 @@ msgid "new"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/machine/show.html.eex:26
+#: lib/mak_web/templates/machine/_orders.html.eex:6
 msgid "find orders"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/machine/show.html.eex:33
+#: lib/mak_web/templates/machine/_orders.html.eex:15
 msgid "status"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/machine/show.html.eex:34
+#: lib/mak_web/templates/machine/_orders.html.eex:16
 #: lib/mak_web/templates/order/form.html.eex:18
 #: lib/mak_web/templates/order/index.html.eex:7
 #: lib/mak_web/templates/order/show.html.eex:11
@@ -166,6 +151,7 @@ msgid "date"
 msgstr ""
 
 #, elixir-format
+#: lib/mak_web/templates/machine/_orders.html.eex:10
 #: lib/mak_web/templates/order/edit.html.eex:1
 #: lib/mak_web/templates/order/index.html.eex:30
 #: lib/mak_web/templates/order/new.html.eex:1
@@ -176,4 +162,9 @@ msgstr ""
 #, elixir-format
 #: lib/mak_web/templates/order/form.html.eex:30
 msgid "type"
+msgstr ""
+
+#, elixir-format
+#: lib/mak_web/templates/order/form.html.eex:12
+msgid "fecha"
 msgstr ""
