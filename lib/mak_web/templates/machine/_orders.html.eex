@@ -1,3 +1,4 @@
+<%= if(length(@machine.orders) > 0) do %>
 <%= form_for @conn, machine_path(@conn, :show, @machine) <> "#orders" , [method: :get], fn f -> %>
   <div class="input-group">
     <span class="input-group-addon" aria-hidden="true">
@@ -6,7 +7,6 @@
     <%= search_input f, :orders_query, placeholder: dgettext("forms", "find orders"), class: "form-control" %>
   </div>
 <%end%>
-
 <table class="table table-striped">
   <thead>
     <tr>
@@ -27,10 +27,13 @@
   <% end %>
   </tbody>
 </table>
+<% else %>
+<div class="row" style="margin-top:20px">
+  <div class="col-sm-8 col-sm-offset-2">
+    <div class="jumbotron">
+      <h3>Esta máquina no tiene ordenes de reparación aún</h3>
+    </div>
+  </div>
+</div>
 
-<span>
-  <%= link dgettext("forms", "edit"), to: machine_path(@conn, :edit, @machine) %>
-</span>
-<span>
-  <%= link dgettext("forms", "back"), to: machine_path(@conn, :index) %>
-</span>
+<% end %>

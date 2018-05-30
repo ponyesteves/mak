@@ -26,7 +26,8 @@ defmodule MakWeb.OrderController do
         |> redirect(to: order_path(conn, :show, order))
 
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        machine_id = Ecto.Changeset.get_field(changeset, :machine_id)
+        render(conn, "new.html", changeset: changeset, machine_id: machine_id)
     end
   end
 
