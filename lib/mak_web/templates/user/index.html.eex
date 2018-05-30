@@ -1,11 +1,9 @@
-<h2>Listing Users</h2>
-<h2>         <%= @current_user.username %> </h2>
 <table class="table">
   <thead>
     <tr>
-      <th>Username</th>
-      <th>Password hash</th>
-
+      <th>Usuario</th>
+      <th>Es Administrador?</th>
+      <th>Email</th>
       <th></th>
     </tr>
   </thead>
@@ -13,8 +11,8 @@
 <%= for user <- @users do %>
     <tr>
       <td><%= user.username %></td>
-      <td><%= user.password_hash %></td>
-
+      <td><%= user.admin && "Sí" || "No" %></td>
+      <td><%= user.email || "No Registrado" %></td>
       <td class="text-right">
         <span><%= link dgettext("forms", "show"), to: user_path(@conn, :show, user), class: "btn btn-default btn-xs" %></span>
         <span><%= link dgettext("forms", "edit"), to: user_path(@conn, :edit, user), class: "btn btn-default btn-xs" %></span>

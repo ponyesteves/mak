@@ -16,4 +16,5 @@ Mak.Repo.insert!(%Mak.Transactions.Code{name: "Pendiente", scope: "status"})
 Mak.Repo.insert!(%Mak.Transactions.Code{name: "En ejecución", scope: "status"})
 Mak.Repo.insert!(%Mak.Transactions.Code{name: "Finalizada", scope: "status"})
 
-Mak.Accounts.create_user(%{username: "admin", password: "1234"})
+Mak.Accounts.create_user(%{username: "admin", password: "1234", admin: true, email: "jose@ceibo.co"})
+IO.puts "Usuario: admin, password:1234"

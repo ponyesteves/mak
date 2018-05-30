@@ -12,12 +12,24 @@
   </div>
 
   <div class="form-group">
+    <%= label f, :email, class: "control-label" %>
+    <%= email_input f, :email, class: "form-control" %>
+    <%= error_tag f, :email %>
+  </div>
+
+  <div class="form-group">
     <%= label f, :password, class: "control-label" %>
     <%= text_input f, :password, class: "form-control", type: "password" %>
     <%= error_tag f, :password %>
   </div>
 
   <div class="form-group">
-    <%= submit "Submit", class: "btn btn-primary" %>
+    <%= label f, :admin, class: "control-label" %>
+    <%= checkbox f, :admin, class: "form-control" %>
+    <%= error_tag f, :admin %>
+  </div>
+
+  <div class="form-group">
+    <%= submit dgettext("forms", "submit"), class: "btn btn-primary" %>
   </div>
 <% end %>
