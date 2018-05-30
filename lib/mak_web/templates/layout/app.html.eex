@@ -16,7 +16,9 @@
       <header class="header">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
+        <%= link to: machine_path(@conn, :index) do %>
           <%= img_tag(static_path(@conn, ~s[/images/isowean.png]), class: "logo") %>
+        <% end %>
         </div>
         </div>
       </header>
@@ -33,14 +35,17 @@
     <nav role="navigation">
     <ul class="nav nav-pills pull-right">
         <li>
-          <%= link to: machine_path(@conn, :index), class: "btn btn-success btn-flat" do %>
-            <span class="glyphicon glyphicon-th-large">
+          <%= link to: machine_path(@conn, :index), class: "btn btn-success", title: gettext("go home") do %>
+            <span class="glyphicon glyphicon-home">
           <% end %>
         </li>
-      </ul>
-      <ul class="nav nav-pills pull-right">
         <li>
-          <%= link to: session_path(@conn, :drop), method: "delete", class: "btn btn-danger btn-flat" do %>
+          <%= link to: import_path(@conn, :machines), class: "btn btn-warning", title: gettext("update") do %>
+             <span class="glyphicon glyphicon-refresh">
+          <% end %>
+        </li>
+        <li>
+          <%= link to: session_path(@conn, :drop), method: "delete", class: "btn btn-danger", title: gettext("logout") do %>
             <span class="glyphicon glyphicon-log-out">
           <% end %>
         </li>

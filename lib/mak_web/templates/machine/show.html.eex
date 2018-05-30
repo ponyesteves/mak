@@ -24,10 +24,14 @@
       <span class="glyphicon glyphicon-qrcode" />
     </a>
   </li>
+  <li role="presentation" class="pull-right">
+    <%= link dgettext("forms", "new") <> " " <> dgettext("forms", "order"), to: machine_order_path(@conn, :new, @machine), class: "btn btn-danger pull-right" %>
+  </li>
 </ul>
+
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane active" id="home">
-    <%= render "_home.html", machine: @machine %>
+    <%= render "_home.html", conn: @conn, machine: @machine %>
   </div>
   <div role="tabpanel" class="tab-pane" id="orders">
     <%= render "_orders.html", conn: @conn, machine: @machine %>

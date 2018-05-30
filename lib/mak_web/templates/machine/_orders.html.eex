@@ -7,8 +7,6 @@
   </div>
 <%end%>
 
-<%= link dgettext("forms", "new") <> " " <> dgettext("forms", "order"), to: machine_order_path(@conn, :new, @machine), class: "btn btn-danger pull-right" %>
-
 <table class="table table-striped">
   <thead>
     <tr>

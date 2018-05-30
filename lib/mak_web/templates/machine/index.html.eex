@@ -2,11 +2,6 @@
   <div class="col-md-9">
     <h2><%= dgettext("forms", "listing machines") %></h2>
   </div>
-  <div class="col-md-3">
-    <%= link to: import_path(@conn, :machines), class: "btn btn-success pull-right", style: "margin-top:20px" do %>
-      <span class="glyphicon glyphicon-refresh">
-    <% end %>
-  </div>
 </div>
 <%= form_for @conn, machine_path(@conn, :index), [method: :get], fn f -> %>
   <div class="input-group">
