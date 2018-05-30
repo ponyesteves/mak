@@ -4,7 +4,7 @@ defmodule Mak.Base.Machine do
   import MakWeb.Gettext, only: [dgettext: 3]
 
   @primary_key {:id, :string, []}
-  @derive {Phoenix.Param, key: :id}
+  # @derive {Phoenix.Param, key: :id}
 
   schema "machines" do
     field(:desc, :string)

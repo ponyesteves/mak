@@ -1,4 +1,13 @@
-<h2><%= dgettext("forms", "listing machines") %></h2>
+<div class="row">
+  <div class="col-md-9">
+    <h2><%= dgettext("forms", "listing machines") %></h2>
+  </div>
+  <div class="col-md-3">
+    <%= link to: import_path(@conn, :machines), class: "btn btn-success pull-right", style: "margin-top:20px" do %>
+      <span class="glyphicon glyphicon-refresh">
+    <% end %>
+  </div>
+</div>
 <%= form_for @conn, machine_path(@conn, :index), [method: :get], fn f -> %>
   <div class="input-group">
 
@@ -9,19 +18,14 @@
   </div>
 <% end %>
 <div class="row">
-  <div class="col-md-12">
-    <%= link to: import_path(@conn, :machines), class: "btn btn-success pull-right", style: "margin-bottom:15px" do %>
-      <span class="glyphicon glyphicon-refresh">
-    <% end %>
-
-</div>
-</div>
-<div class="row">
 
 <%= for machine <- @machines do %>
 <div class="col-md-3">
   <div class="panel panel-primary" onclick="window.goto('<%= machine_path(@conn, :show, machine) %>')">
-    <div class="panel-heading" style="height:70px"><%= machine.name %></div>
+    <div class="panel-heading" style="height:80px">
+      <%= machine.name %>
+      <span class="badge"><%= machine.id %>
+    </span></div>
       <div class="panel-body" style="height:100px">
         <p><%= String.slice(machine.desc, 0..40) <> "  ..." %> </p>
       </div>
