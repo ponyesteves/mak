@@ -53,7 +53,7 @@ msgid "login"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/machine/index.html.eex:8
+#: lib/mak_web/templates/machine/index.html.eex:17
 msgid "find machine"
 msgstr ""
 
@@ -63,7 +63,7 @@ msgid "image"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/machine/index.html.eex:1
+#: lib/mak_web/templates/machine/index.html.eex:3
 msgid "listing machines"
 msgstr ""
 
@@ -145,6 +145,7 @@ msgid "title"
 msgstr ""
 
 #, elixir-format
+#: lib/mak_web/templates/order/form.html.eex:12
 #: lib/mak_web/templates/order/index.html.eex:6
 #: lib/mak_web/templates/order/show.html.eex:6
 msgid "date"
@@ -155,7 +156,6 @@ msgstr ""
 #: lib/mak_web/templates/order/edit.html.eex:1
 #: lib/mak_web/templates/order/index.html.eex:30
 #: lib/mak_web/templates/order/new.html.eex:1
-#: lib/mak_web/templates/order/show.html.eex:1
 msgid "order"
 msgstr ""
 
@@ -165,6 +165,6 @@ msgid "type"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/order/form.html.eex:12
-msgid "fecha"
+#: lib/mak_web/templates/order/show.html.eex:1
+msgid "order nº %{id}"
 msgstr ""

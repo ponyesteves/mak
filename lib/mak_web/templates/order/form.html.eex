@@ -9,7 +9,7 @@
   <%= hidden_input f, :user_id, class: "form-control", value: @current_user.id %>
 
   <div class="form-group">
-    <%= label f, dgettext("forms", "fecha"), class: "control-label" %>
+    <%= label f, dgettext("forms", "date"), class: "control-label" %>
     <%= text_input f, :date, class: "form-control", type: "date" %>
     <%= error_tag f, :date %>
   </div>

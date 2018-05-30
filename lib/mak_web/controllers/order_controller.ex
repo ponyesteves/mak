@@ -22,7 +22,7 @@ defmodule MakWeb.OrderController do
     case Transactions.create_order(Map.put(order_params, "status_id", pendiente_id)) do
       {:ok, order} ->
         conn
-        |> put_flash(:info, "Order created successfully.")
+        |> put_flash(:info, dgettext("flash", "Order %{id} created successfully.", id: order.id ))
         |> redirect(to: order_path(conn, :show, order))
 
       {:error, %Ecto.Changeset{} = changeset} ->
