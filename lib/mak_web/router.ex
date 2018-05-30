@@ -59,7 +59,7 @@ defmodule MakWeb.Router do
     get("/", BackofficeController, :index)
 
     resources("/users", UserController)
-    resources("/orders", OrderController, only: [:index])
+    resources("/orders", OrderController, only: [:index, :delete])
   end
 
   # Other scopes may use custom stacks.

@@ -6,7 +6,7 @@
           <span class="glyphicon glyphicon-user" />
         </div>
         <div class="panel-body">
-          <h2>
+          <h2 style="text-align: center">
             <span class="label label-primary">Gestionar Usuarios</span>
           </h2>
         </div>
@@ -17,10 +17,10 @@
     <%= link to: order_path(@conn, :index) do %>
       <div class="panel panel-warning">
         <div class="panel-heading">
-          <span class="glyphicon glyphicon-wrench"/>
+          <span class="glyphicon glyphicon-modal-window"/>
         </div>
         <div class="panel-body">
-          <h2>
+          <h2 style="text-align: center">
             <span class="label label-warning">Gestionar Ordenes</span>
           </h2>
         </div>
@@ -31,7 +31,7 @@
     <%= link to: machine_path(@conn, :index) do %>
       <div class="panel panel-success">
         <div class="panel-heading">
-          <span class="glyphicon glyphicon-modal-window"/>
+          <span class="glyphicon glyphicon-wrench"/>
         </div>
         <div class="panel-body">
           <h2 style="text-align: center">

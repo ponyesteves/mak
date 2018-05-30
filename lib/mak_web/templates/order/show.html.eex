@@ -19,5 +19,5 @@
 
 </ul>
 
-<span><%= link dgettext("forms", "new"), to: order_path(@conn, :edit, @order) %></span>
+<span><%= link dgettext("forms", "edit"), to: order_path(@conn, :edit, @order) %></span>
 <span><%= link dgettext("forms", "back"), to: machine_path(@conn, :show, @order.machine_id) <> "#orders" %></span>
