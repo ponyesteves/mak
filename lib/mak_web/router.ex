@@ -1,5 +1,6 @@
 defmodule MakWeb.Router do
   use MakWeb, :router
+  import MakWeb.Auth, only: [check_admin: 2]
 
   pipeline :browser do
     plug(:accepts, ["html"])
@@ -17,9 +18,14 @@ defmodule MakWeb.Router do
     plug(MakWeb.Guardian.AuthAccessPipeline)
   end
 
+  pipeline :backoffice do
+    plug(:check_admin)
+  end
+
   pipeline :landing do
     plug(:put_layout, {MakWeb.LayoutView, "landing.html"})
   end
+
 
   # Public
   scope "/", MakWeb do
@@ -30,6 +36,7 @@ defmodule MakWeb.Router do
 
     delete("/sessions/drop", SessionController, :drop)
   end
+
   #
 
   # Private
@@ -41,16 +48,18 @@ defmodule MakWeb.Router do
     resources("/m", MachineController) do
       resources("/orders", OrderController, only: [:new])
     end
+
     resources("/codes", CodeController)
-    resources("/orders", OrderController)
+    resources("/orders", OrderController, only: [:create, :edit, :update, :show])
   end
 
   # BackOffice
-  scope "/backoffice", MakWeb do
-    pipe_through([:browser, :auth])
+  scope "/bo", MakWeb do
+    pipe_through([:browser, :auth, :backoffice])
     get("/", BackofficeController, :index)
 
     resources("/users", UserController)
+    resources("/orders", OrderController, only: [:index])
   end
 
   # Other scopes may use custom stacks.

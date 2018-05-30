@@ -11,11 +11,6 @@ msgid ""
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/layout/app.html.eex:10
-msgid "Welcome"
-msgstr ""
-
-#, elixir-format
 #: lib/mak_web/templates/layout/landing.html.eex:10
 msgid "Mak App"
 msgstr ""
@@ -23,4 +18,24 @@ msgstr ""
 #, elixir-format
 #: lib/mak_web/controllers/session_controller.ex:16
 msgid "welcome"
+msgstr ""
+
+#, elixir-format
+#: lib/mak_web/templates/layout/app.html.eex:48
+msgid "go home"
+msgstr ""
+
+#, elixir-format
+#: lib/mak_web/templates/layout/app.html.eex:60
+msgid "logout"
+msgstr ""
+
+#, elixir-format
+#: lib/mak_web/templates/order/index.html.eex:1
+msgid "orders"
+msgstr ""
+
+#, elixir-format
+#: lib/mak_web/templates/layout/app.html.eex:54
+msgid "update"
 msgstr ""

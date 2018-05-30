@@ -14,7 +14,7 @@ defmodule MakWeb.SessionController do
       {:ok, conn} ->
         conn
         |> put_flash(:info, gettext("welcome"))
-        |> redirect(to: machine_path(conn, :index))
+        |> redirect(to: "/")
 
       {:error, _reason, conn} ->
         conn

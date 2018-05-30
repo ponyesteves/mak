@@ -97,3 +97,8 @@ msgstr "Parece que hubo un problema! Revise los errores e intente nuevamente"
 #: lib/mak/base/machine.ex:30
 msgid "image should by smaller than %{size}"
 msgstr "La imagen adjunta debe pesar menos de %{size} KB"
+
+#, elixir-format
+#: lib/mak_web/controllers/auth.ex:38
+msgid "only admin"
+msgstr "Solo los administradores puede ingresar a esa sección"

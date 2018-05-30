@@ -2,6 +2,7 @@ defmodule MakWeb.Auth do
   import Plug.Conn
   import Phoenix.Controller
   import Comeonin.Bcrypt, only: [checkpw: 2, dummy_checkpw: 0]
+  import MakWeb.Gettext, only: [dgettext: 2]
 
   alias MakWeb.Router.Helpers
 
@@ -27,6 +28,18 @@ defmodule MakWeb.Auth do
       true  ->
         dummy_checkpw()
         {:error, :not_found, conn}
+    end
+  end
+
+  def check_admin(conn, _opts) do
+    current_user = conn.assigns[:current_user]
+    unless(current_user && current_user.admin) do
+      conn
+      |> put_flash(:error,  dgettext("errors", "only admin"))
+      |> redirect(to: "/")
+    else
+      IO.inspect current_user
+      conn
     end
   end
 end

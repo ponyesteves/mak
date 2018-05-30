@@ -104,3 +104,8 @@ msgstr ""
 #: lib/mak/base/machine.ex:30
 msgid "image should by smaller than %{size}"
 msgstr ""
+
+#, elixir-format
+#: lib/mak_web/controllers/auth.ex:38
+msgid "only admin"
+msgstr ""
