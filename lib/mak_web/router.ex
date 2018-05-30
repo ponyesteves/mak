@@ -30,18 +30,27 @@ defmodule MakWeb.Router do
 
     delete("/sessions/drop", SessionController, :drop)
   end
+  #
 
   # Private
   scope "/", MakWeb do
     pipe_through([:browser, :auth])
-    get("/", MachineController, :index)
+    get("/", GateController, :index)
     get("/import", ImportController, :machines)
+
     resources("/m", MachineController) do
       resources("/orders", OrderController, only: [:new])
     end
-    resources("/users", UserController, only: [:index, :show, :delete])
     resources("/codes", CodeController)
     resources("/orders", OrderController)
+  end
+
+  # BackOffice
+  scope "/backoffice", MakWeb do
+    pipe_through([:browser, :auth])
+    get("/", BackofficeController, :index)
+
+    resources("/users", UserController)
   end
 
   # Other scopes may use custom stacks.

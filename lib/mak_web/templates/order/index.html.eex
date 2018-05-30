@@ -1,12 +1,11 @@
-<h2>Listing Orders</h2>
+<h2><%= gettext("orders") %></h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th><%= link dgettext("forms", "date") %></th>
-      <th><%= link dgettext("forms", "title") %></th>
-      <th><%= link dgettext("forms", "desc") %></th>
-
+      <th><%= dgettext("forms", "date") %></th>
+      <th><%= dgettext("forms", "title") %></th>
+      <th><%= dgettext("forms", "desc") %></th>
       <th></th>
     </tr>
   </thead>

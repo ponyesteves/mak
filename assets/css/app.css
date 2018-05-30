@@ -7,3 +7,7 @@ input[type=search]{
 tbody > tr {
   cursor: pointer;
 }
+
+.bo_panels > a:hover {
+  text-decoration: none;
+}

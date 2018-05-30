@@ -45,15 +45,17 @@
     <nav role="navigation">
     <ul class="nav nav-pills pull-right">
         <li>
-          <%= link to: machine_path(@conn, :index), class: "btn btn-success", title: gettext("go home") do %>
+          <%= link to: "/", class: "btn btn-success", title: gettext("go home") do %>
             <span class="glyphicon glyphicon-home">
           <% end %>
         </li>
+        <%= if machine_land?(@conn, machine_path(@conn, :index)) do %>
         <li>
           <%= link to: import_path(@conn, :machines), class: "btn btn-warning", title: gettext("update") do %>
              <span class="glyphicon glyphicon-refresh">
           <% end %>
         </li>
+        <% end %>
         <li>
           <%= link to: session_path(@conn, :drop), method: "delete", class: "btn btn-danger", title: gettext("logout") do %>
             <span class="glyphicon glyphicon-log-out">
