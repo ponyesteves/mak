@@ -1,8 +1,3 @@
-<div class="row">
-  <div class="col-md-9">
-    <h2><%= dgettext("forms", "listing machines") %></h2>
-  </div>
-</div>
 <%= form_for @conn, machine_path(@conn, :index), [method: :get], fn f -> %>
   <div class="input-group">
 
@@ -19,7 +14,7 @@
   <div class="panel panel-primary" onclick="window.goto('<%= machine_path(@conn, :show, machine) %>')">
     <div class="panel-heading" style="height:80px">
       <%= machine.name %>
-      <span class="badge"><%= machine.id %>
+      <span class="badge pull-right"><%= machine.id %>
     </span></div>
       <div class="panel-body" style="height:100px">
         <p><%= String.slice(machine.desc, 0..40) <> "  ..." %> </p>

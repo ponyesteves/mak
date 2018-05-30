@@ -2,17 +2,23 @@
   <div class="panel-heading">
     <h2>
       <%= @machine.name %>
-      <span class="label label-info pull-right"><%= @machine.id %></span>
     </h2>
   </div>
   <div class="panel-body">
-    <div class="col-sm-6">
-      <h4>
-        <%= @machine.desc %>
-      </h4>
+    <div class="row">
+      <div class="col-sm-6">
+        <h4>
+          <%= @machine.desc %>
+        </h4>
+      </div>
+      <div class="col-sm-6">
+        <%= @machine.image && img_tag(img_from_binary(@machine.image), width: "300px") %>
+      </div>
     </div>
-    <div class="col-sm-6">
-      <%= @machine.image && img_tag(img_from_binary(@machine.image), width: "300px") %>
+    <div class="row">
+      <span class="label label-info pull-right">
+        <%= @machine.id %>
+      </span>
     </div>
   </div>
 </div>
