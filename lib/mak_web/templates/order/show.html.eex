@@ -18,6 +18,24 @@
   </li>
 
 </ul>
-
-<span><%= link dgettext("forms", "edit"), to: order_path(@conn, :edit, @order) %></span>
-<span><%= link dgettext("forms", "back"), to: machine_path(@conn, :show, @order.machine_id) <> "#orders" %></span>
+<%= if @order.status_id == 3 do %>
+  <%= link to: order_path(@conn, :change_status, @order, status: 5), class: "btn btn-success" do %>
+    <span class="glyphicon glyphicon-ok" />
+  <% end %>
+<% else %>
+  <%= link to: order_path(@conn, :change_status, @order, status: 3), class: "btn btn-danger" do %>
+    <span class="glyphicon glyphicon-repeat" />
+  <% end %>
+<% end %>
+<%= link to: order_path(@conn, :edit, @order), class: "btn btn-warning", style: "margin-left:5px" do %>
+  <span class="glyphicon glyphicon-edit" />
+<% end %>
+<br />
+<%= if(@current_user.admin) do %>
+  <span>
+    <%= link dgettext("forms", "go back to orders"), to: order_path(@conn, :index) <> "#orders"  %>
+  </span><br />
+<% end %>
+<span>
+  <%= link dgettext("forms", "go back to machine"), to: machine_path(@conn, :show, @order.machine_id) <> "#orders" %>
+</span>

@@ -119,6 +119,18 @@ defmodule Mak.Transactions do
     Repo.all(Order)
   end
 
+  def list_not_pending_orders do
+    Order
+    |> where([o], not(o.status_id == 3))
+    |> Repo.all()
+  end
+
+  def list_pending_orders() do
+    Order
+    |> where([o], o.status_id == 3)
+    |> Repo.all()
+  end
+
   @doc """
   Gets a single order.
 

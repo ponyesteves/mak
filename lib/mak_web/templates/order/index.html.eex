@@ -1,5 +1,33 @@
-<h2><%= gettext("orders") %></h2>
 
+<div class="row">
+  <div class="col-md-4">
+    <h2><%= gettext("orders") %></h2>
+  </div>
+  <div class="col-md-4">
+    <h2>
+      <%= if(@show=="not_pending") do %>
+        <%= link to: order_path(@conn, :index), class: "btn btn-primary btn-xs" do %>
+          <span class="glyphicon glyphicon-sort" />
+        <% end %>
+        <%= link gettext("done"), to: order_path(@conn, :index), class: "btn btn-success btn-xs" %>
+      <% else %>
+        <%= link to: order_path(@conn, :index, show: "not_pending"), class: "btn btn-primary btn-xs" do %>
+          <span class="glyphicon glyphicon-sort" />
+        <% end %>
+        <%= link ngettext("%{count} pending", "%{count} pendings", length(@orders)), to: order_path(@conn, :index, show: "not_pending"), class: "btn btn-warning btn-xs" %>
+      <% end %>
+      </h2>
+  </div>
+</div>
+<%= form_for @conn, order_path(@conn, :index), [method: :get], fn f -> %>
+  <div class="input-group">
+
+    <span class="input-group-addon" aria-hidden="true">
+      <span class="glyphicon glyphicon-search "></span>
+    </span>
+    <%= search_input f, :q, placeholder: dgettext("forms", "find machine"), class: "form-control" %>
+  </div>
+<% end %>
 <table class="table">
   <thead>
     <tr>
@@ -11,15 +39,18 @@
   </thead>
   <tbody>
 <%= for order <- @orders do %>
-    <tr>
-      <td><%= order.date %></td>
+    <tr onclick="window.goto('<%= order_path(@conn, :show, order) %>')">
+      <td><%= order.date.day %>/<%= order.date.month %>/<%= order.date.year - 2000 %></td>
       <td><%= order.title %></td>
       <td><%= order.desc %></td>
 
       <td class="text-right">
-        <span><%= link dgettext("forms", "show"), to: order_path(@conn, :show, order), class: "btn btn-default btn-xs" %></span>
-        <span><%= link dgettext("forms", "edit"), to: order_path(@conn, :edit, order), class: "btn btn-default btn-xs" %></span>
-        <span><%= link dgettext("forms", "delete"), to: order_path(@conn, :delete, order), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        <%= link to: order_path(@conn, :edit, order), class: "btn btn-default btn-xs" do %>
+         <span class="glyphicon glyphicon-edit" />
+        <% end %>
+        <%= link to: order_path(@conn, :delete, order), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" do %>
+          <span class="glyphicon glyphicon-trash" />
+        <% end %>
       </td>
     </tr>
 <% end %>

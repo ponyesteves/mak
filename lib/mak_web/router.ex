@@ -60,6 +60,7 @@ defmodule MakWeb.Router do
 
     resources("/users", UserController)
     resources("/orders", OrderController, only: [:index, :delete])
+    get("/finish_order/:id", OrderController, :change_status)
   end
 
   # Other scopes may use custom stacks.

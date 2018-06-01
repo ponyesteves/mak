@@ -6,9 +6,12 @@ defmodule MakWeb.OrderController do
 
   plug(:load_assoc, only: [:new, :edit])
 
-  def index(conn, _params) do
-    orders = Transactions.list_orders()
-    render(conn, "index.html", orders: orders)
+  def index(conn, params) do
+    orders = case params["show"] do
+      "not_pending" -> Transactions.list_not_pending_orders()
+      _ -> Transactions.list_pending_orders()
+    end
+    render(conn, "index.html", orders: orders, show: params["show"])
   end
 
   def new(conn, %{"machine_id" => machine_id}) do
@@ -63,6 +66,13 @@ defmodule MakWeb.OrderController do
     conn
     |> put_flash(:info, "Order deleted successfully.")
     |> redirect(to: order_path(conn, :index))
+  end
+
+  def change_status(conn, %{"id" => id, "status" => status}) do
+    order = Transactions.get_order!(id)
+    Transactions.update_order(order, %{"status_id" => status})
+
+    redirect(conn, to: order_path(conn, :index))
   end
 
   defp load_assoc(conn, _) do

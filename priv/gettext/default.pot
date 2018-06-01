@@ -31,11 +31,23 @@ msgid "logout"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/order/index.html.eex:1
+#: lib/mak_web/templates/order/index.html.eex:4
 msgid "orders"
 msgstr ""
 
 #, elixir-format
 #: lib/mak_web/templates/layout/app.html.eex:54
 msgid "update"
+msgstr ""
+
+#, elixir-format
+#: lib/mak_web/templates/order/index.html.eex:11
+msgid "%{count} pending"
+msgid_plural "%{count} pendings"
+msgstr[0] ""
+msgstr[1] ""
+
+#, elixir-format
+#: lib/mak_web/templates/order/index.html.eex:9
+msgid "done"
 msgstr ""
