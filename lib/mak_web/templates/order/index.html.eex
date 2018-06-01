@@ -25,7 +25,7 @@
     <span class="input-group-addon" aria-hidden="true">
       <span class="glyphicon glyphicon-search "></span>
     </span>
-    <%= search_input f, :q, placeholder: dgettext("forms", "find machine"), class: "form-control" %>
+    <%= search_input f, :q, placeholder: dgettext("forms", "find order"), class: "form-control" %>
   </div>
 <% end %>
 <table class="table">
@@ -42,9 +42,18 @@
     <tr onclick="window.goto('<%= order_path(@conn, :show, order) %>')">
       <td><%= order.date.day %>/<%= order.date.month %>/<%= order.date.year - 2000 %></td>
       <td><%= order.title %></td>
-      <td><%= order.desc %></td>
+      <td><%= (order.desc |> String.slice(0..20)) <> " (ver más ...)" %></td>
 
       <td class="text-right">
+      <%= if order.status_id == 3 do %>
+        <%= link to: order_path(@conn, :change_status, order, status: 5), class: "btn btn-success btn-xs" do %>
+         <span class="glyphicon glyphicon-ok" />
+        <% end %>
+      <% else %>
+        <%= link to: order_path(@conn, :change_status, order, status: 3), class: "btn btn-danger btn-xs" do %>
+          <span class="glyphicon glyphicon-repeat" />
+        <% end %>
+      <% end %>
         <%= link to: order_path(@conn, :edit, order), class: "btn btn-default btn-xs" do %>
          <span class="glyphicon glyphicon-edit" />
         <% end %>

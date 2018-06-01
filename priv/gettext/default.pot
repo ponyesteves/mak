@@ -41,13 +41,13 @@ msgid "update"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/order/index.html.eex:11
+#: lib/mak_web/templates/order/index.html.eex:17
 msgid "%{count} pending"
 msgid_plural "%{count} pendings"
 msgstr[0] ""
 msgstr[1] ""
 
 #, elixir-format
-#: lib/mak_web/templates/order/index.html.eex:9
+#: lib/mak_web/templates/order/index.html.eex:12
 msgid "done"
 msgstr ""

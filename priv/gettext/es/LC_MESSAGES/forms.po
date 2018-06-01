@@ -29,7 +29,7 @@ msgstr "Código"
 #: lib/mak_web/templates/machine/_orders.html.eex:16
 #: lib/mak_web/templates/machine/form.html.eex:27
 #: lib/mak_web/templates/order/form.html.eex:24
-#: lib/mak_web/templates/order/index.html.eex:30
+#: lib/mak_web/templates/order/index.html.eex:36
 #: lib/mak_web/templates/order/show.html.eex:16
 msgid "desc"
 msgstr "Descripción"
@@ -56,7 +56,6 @@ msgstr "Ingresar"
 
 #, elixir-format
 #: lib/mak_web/templates/machine/index.html.eex:7
-#: lib/mak_web/templates/order/index.html.eex:22
 msgid "find machine"
 msgstr "Buscar Máquina por código o nombre"
 
@@ -130,14 +129,14 @@ msgstr "Estado"
 #, elixir-format
 #: lib/mak_web/templates/machine/_orders.html.eex:14
 #: lib/mak_web/templates/order/form.html.eex:18
-#: lib/mak_web/templates/order/index.html.eex:29
+#: lib/mak_web/templates/order/index.html.eex:35
 #: lib/mak_web/templates/order/show.html.eex:11
 msgid "title"
 msgstr "Resúmen"
 
 #, elixir-format
 #: lib/mak_web/templates/order/form.html.eex:12
-#: lib/mak_web/templates/order/index.html.eex:28
+#: lib/mak_web/templates/order/index.html.eex:34
 #: lib/mak_web/templates/order/show.html.eex:6
 msgid "date"
 msgstr "Fecha"
@@ -168,3 +167,8 @@ msgstr "Volver a máquinas"
 #: lib/mak_web/templates/order/show.html.eex:36
 msgid "go back to orders"
 msgstr "Volver a ordenes"
+
+#, elixir-format, fuzzy
+#: lib/mak_web/templates/order/index.html.eex:28
+msgid "find order"
+msgstr "Buscar Ordenes"
