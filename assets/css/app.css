@@ -1,13 +1,17 @@
 input[type=search]{
-  /* background-color:aliceblue; */
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
+/* tr are links*/
 tbody > tr {
   cursor: pointer;
 }
 
 .bo_panels > a:hover {
   text-decoration: none;
+}
+/* For btn in same container than tabs */
+.nav >  li > a.btn:hover {
+  background-color: #d9534f;
 }

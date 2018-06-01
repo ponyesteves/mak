@@ -24,12 +24,12 @@
   <body>
     <div class="container">
       <header class="header">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-        <%= link to: machine_path(@conn, :index) do %>
-          <%= img_tag(static_path(@conn, ~s[/images/isowean.png]), class: "logo") %>
-        <% end %>
-        </div>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+          <%= link to: machine_path(@conn, :index) do %>
+            <%= img_tag(static_path(@conn, ~s[/images/isowean.png]), class: "logo") %>
+          <% end %>
+          </div>
         </div>
       </header>
 

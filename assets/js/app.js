@@ -1,5 +1,6 @@
 import "phoenix_html"
-import "bootstrap/dist/js/bootstrap.min.js"
+// import "bootstrap/dist/js/bootstrap.min.js"
+import "bootstrap/js/tab.js"
 import { triggerTab } from "./helpers"
 // import React from "react"
 // import ReactDOM from "react-dom"
