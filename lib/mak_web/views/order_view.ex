@@ -1,8 +1,5 @@
 defmodule MakWeb.OrderView do
   use MakWeb, :view
+  import MakWeb.HelperView, only: [format_date: 1]
 
-  def format_date(date) do
-    [date.day, date.month, date.year - 2000]
-    |> Enum.join("/")
-  end
 end
