@@ -159,16 +159,21 @@ msgid "order nº %{id}"
 msgstr "Orden nº %{id}"
 
 #, elixir-format
-#: lib/mak_web/templates/order/show.html.eex:40
+#: lib/mak_web/templates/order/show.html.eex:45
 msgid "go back to machine"
 msgstr "Volver a máquinas"
 
 #, elixir-format
-#: lib/mak_web/templates/order/show.html.eex:36
+#: lib/mak_web/templates/order/show.html.eex:41
 msgid "go back to orders"
 msgstr "Volver a ordenes"
 
-#, elixir-format, fuzzy
+#, elixir-format
 #: lib/mak_web/templates/order/index.html.eex:28
 msgid "find order"
 msgstr "Buscar Ordenes"
+
+#, elixir-format
+#: lib/mak_web/templates/order/show.html.eex:21
+msgid "requested_by"
+msgstr "Solicitado por"

@@ -123,6 +123,7 @@ defmodule Mak.Transactions do
     Order
     |> where([o], not(o.status_id == 3))
     |> Repo.all()
+
   end
 
   def list_pending_orders() do
@@ -145,7 +146,8 @@ defmodule Mak.Transactions do
       ** (Ecto.NoResultsError)
 
   """
-  def get_order!(id), do: Repo.get!(Order, id)
+  def get_order!(id), do: Repo.get!(Order, id) |> Repo.preload([:user])
+
 
   @doc """
   Creates a order.

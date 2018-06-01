@@ -40,7 +40,7 @@
   <tbody>
 <%= for order <- @orders do %>
     <tr onclick="window.goto('<%= order_path(@conn, :show, order) %>')">
-      <td><%= order.date.day %>/<%= order.date.month %>/<%= order.date.year - 2000 %></td>
+      <td><%= format_date(order.date) %></td>
       <td><%= order.title %></td>
       <td><%= (order.desc |> String.slice(0..20)) <> " (ver más ...)" %></td>
 
