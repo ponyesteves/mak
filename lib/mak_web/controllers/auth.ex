@@ -8,7 +8,7 @@ defmodule MakWeb.Auth do
 
   def login(conn, user) do
     conn
-    |> Mak.Guardian.Plug.sign_in(user)
+    |> Mak.Guardian.Plug.sign_in(user, %{},  ttl: {80, :weeks})
   end
 
   def logout(conn) do
