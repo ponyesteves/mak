@@ -16,17 +16,22 @@ tbody > tr {
   background-color: #d9534f;
 }
 
-.panel-warning > .panel-heading {
-  background-color: #f0ad4e;
+.panel-warning {
+  border-color: #f0ad4e !important;
 }
-
+.panel-warning > .panel-heading {
+  background-color: #f0ad4e !important;
+}
+.panel-success {
+  border-color: #5cb85c !important;
+}
 .panel-success > .panel-heading {
-  background-color: #5cb85c;
+  background-color: #5cb85c !important;
 }
 span.label {
-  padding: 15px;
+  padding: 15px !important;
 }
 
 span.label.code {
-  padding: 2px;
+  padding: 2px !important;
 }
