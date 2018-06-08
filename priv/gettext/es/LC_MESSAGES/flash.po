@@ -37,6 +37,6 @@ msgid "see you"
 msgstr "Hasta la próxima!"
 
 #, elixir-format
-#: lib/mak_web/controllers/order_controller.ex:28
+#: lib/mak_web/controllers/order_controller.ex:25
 msgid "Order %{id} created successfully."
 msgstr "Su número de order es el %{id}"

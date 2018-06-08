@@ -42,13 +42,20 @@ msgid "update"
 msgstr ""
 
 #, elixir-format
-#: lib/mak_web/templates/order/index.html.eex:17
+#: lib/mak_web/templates/order/index.html.eex:13
 msgid "%{count} pending"
 msgid_plural "%{count} pendings"
 msgstr[0] "Solo una orden pendiente"
 msgstr[1] "%{count} Pendientes"
 
 #, elixir-format
-#: lib/mak_web/templates/order/index.html.eex:12
+#: lib/mak_web/templates/order/index.html.eex:23
 msgid "done"
 msgstr "Finalizadas"
+
+#, elixir-format, fuzzy
+#: lib/mak_web/templates/order/index.html.eex:18
+msgid "%{count} intern"
+msgid_plural "%{count} interns"
+msgstr[0] "Solo una orden interna en proceso"
+msgstr[1] "%{count} Ordenes internas en proceso"

@@ -29,8 +29,8 @@ msgstr "Código"
 #: lib/mak_web/templates/machine/_orders.html.eex:16
 #: lib/mak_web/templates/machine/form.html.eex:27
 #: lib/mak_web/templates/order/form.html.eex:24
-#: lib/mak_web/templates/order/index.html.eex:36
-#: lib/mak_web/templates/order/show.html.eex:16
+#: lib/mak_web/templates/order/index.html.eex:42
+#: lib/mak_web/templates/order/show.html.eex:25
 msgid "desc"
 msgstr "Descripción"
 
@@ -77,6 +77,7 @@ msgstr "Borrar"
 #, elixir-format
 #: lib/mak_web/templates/machine/edit.html.eex:1
 #: lib/mak_web/templates/order/edit.html.eex:1
+#: lib/mak_web/templates/order/show.html.eex:35
 #: lib/mak_web/templates/user/index.html.eex:18
 #: lib/mak_web/templates/user/show.html.eex:17
 msgid "edit"
@@ -106,6 +107,7 @@ msgstr "Volver"
 #, elixir-format
 #: lib/mak_web/templates/machine/edit.html.eex:1
 #: lib/mak_web/templates/machine/new.html.eex:1
+#: lib/mak_web/templates/order/show.html.eex:11
 msgid "machine"
 msgstr "Máquina"
 
@@ -129,15 +131,14 @@ msgstr "Estado"
 #, elixir-format
 #: lib/mak_web/templates/machine/_orders.html.eex:14
 #: lib/mak_web/templates/order/form.html.eex:18
-#: lib/mak_web/templates/order/index.html.eex:35
-#: lib/mak_web/templates/order/show.html.eex:11
+#: lib/mak_web/templates/order/index.html.eex:41
 msgid "title"
 msgstr "Resúmen"
 
 #, elixir-format
 #: lib/mak_web/templates/order/form.html.eex:12
-#: lib/mak_web/templates/order/index.html.eex:34
-#: lib/mak_web/templates/order/show.html.eex:6
+#: lib/mak_web/templates/order/index.html.eex:40
+#: lib/mak_web/templates/order/show.html.eex:7
 msgid "date"
 msgstr "Fecha"
 
@@ -145,6 +146,7 @@ msgstr "Fecha"
 #: lib/mak_web/templates/machine/show.html.eex:28
 #: lib/mak_web/templates/order/edit.html.eex:1
 #: lib/mak_web/templates/order/new.html.eex:1
+#: lib/mak_web/templates/order/show.html.eex:35
 msgid "order"
 msgstr "Orden"
 
@@ -154,7 +156,7 @@ msgid "type"
 msgstr "Tipo"
 
 #, elixir-format
-#: lib/mak_web/templates/order/show.html.eex:1
+#: lib/mak_web/templates/order/show.html.eex:2
 msgid "order nº %{id}"
 msgstr "Orden nº %{id}"
 
@@ -164,16 +166,16 @@ msgid "go back to machine"
 msgstr "Volver a máquinas"
 
 #, elixir-format
-#: lib/mak_web/templates/order/show.html.eex:41
+#: lib/mak_web/templates/order/show.html.eex:40
 msgid "go back to orders"
 msgstr "Volver a ordenes"
 
 #, elixir-format
-#: lib/mak_web/templates/order/index.html.eex:28
+#: lib/mak_web/templates/order/index.html.eex:34
 msgid "find order"
 msgstr "Buscar Ordenes"
 
 #, elixir-format
-#: lib/mak_web/templates/order/show.html.eex:21
+#: lib/mak_web/templates/order/show.html.eex:15
 msgid "requested_by"
 msgstr "Solicitado por"

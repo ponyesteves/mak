@@ -3,18 +3,24 @@
   <div class="col-md-4">
     <h2><%= gettext("orders") %></h2>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-8">
     <h2>
-      <%= if(@show=="not_pending") do %>
-        <%= link to: order_path(@conn, :index), class: "btn btn-primary btn-xs" do %>
-          <span class="glyphicon glyphicon-sort" />
-        <% end %>
-        <%= link gettext("done"), to: order_path(@conn, :index), class: "btn btn-success btn-xs" %>
-      <% else %>
-        <%= link to: order_path(@conn, :index, show: "not_pending"), class: "btn btn-primary btn-xs" do %>
-          <span class="glyphicon glyphicon-sort" />
-        <% end %>
-        <%= link ngettext("%{count} pending", "%{count} pendings", length(@orders)), to: order_path(@conn, :index, show: "not_pending"), class: "btn btn-warning btn-xs" %>
+      <%= case @status do %>
+        <%= 3 -> %>
+          <%= link to: order_path(@conn, :index, status: 4), class: "btn btn-primary btn-xs" do %>
+            <span class="glyphicon glyphicon-sort" />
+          <% end %>
+          <%= link ngettext("%{count} pending", "%{count} pendings", length(@orders)), to: order_path(@conn, :index, status: 4), class: "btn btn-warning btn-xs" %>
+        <%= 4 -> %>
+          <%= link to: order_path(@conn, :index, status: 5), class: "btn btn-primary btn-xs" do %>
+            <span class="glyphicon glyphicon-sort" />
+          <% end %>
+          <%= link ngettext("%{count} intern", "%{count} interns", length(@orders)), to: order_path(@conn, :index, status: 5), class: "btn btn-warning btn-xs" %>
+        <%= 5 -> %>
+          <%= link to: order_path(@conn, :index, status: 3), class: "btn btn-primary btn-xs" do %>
+            <span class="glyphicon glyphicon-sort" />
+          <% end %>
+          <%= link gettext("done"), to: order_path(@conn, :index, status: 3), class: "btn btn-success btn-xs" %>
       <% end %>
       </h2>
   </div>
@@ -45,11 +51,22 @@
       <td><%= (order.desc |> String.slice(0..20)) <> " (ver más ...)" %></td>
 
       <td class="text-right">
-      <%= if order.status_id == 3 do %>
-        <%= link to: order_path(@conn, :change_status, order, status: 5), class: "btn btn-success btn-xs" do %>
+      <%= case order.status_id do %>
+        <%= 3 -> %>
+        <%= link to: order_path(@conn, :change_status, order, status: 5), class: "btn btn-success btn-xs", title: "En Teamplace" do %>
          <span class="glyphicon glyphicon-ok" />
         <% end %>
-      <% else %>
+        <%= link to: order_path(@conn, :change_status, order, status: 4), class: "btn btn-success btn-xs", title: "Trabajo interno" do %>
+         <span class="glyphicon glyphicon-glyphicon glyphicon-user" />
+        <% end %>
+      <%= 4 -> %>
+        <%= link to: order_path(@conn, :change_status, order, status: 5), class: "btn btn-success btn-xs", title: "Finalizado" do %>
+         <span class="glyphicon glyphicon-ok" />
+        <% end %>
+        <%= link to: order_path(@conn, :change_status, order, status: 3), class: "btn btn-danger btn-xs" do %>
+          <span class="glyphicon glyphicon-repeat" />
+        <% end %>
+      <% _ -> %>
         <%= link to: order_path(@conn, :change_status, order, status: 3), class: "btn btn-danger btn-xs" do %>
           <span class="glyphicon glyphicon-repeat" />
         <% end %>

@@ -11,7 +11,7 @@ defmodule Mak.Transactions.Code do
   @doc false
   def changeset(type, attrs) do
     type
-    |> cast(attrs, [:code, :name])
-    |> validate_required([:code, :name])
+    |> cast(attrs, [:scope, :name])
+    |> validate_required([:scope, :name])
   end
 end

@@ -7,11 +7,8 @@ defmodule MakWeb.OrderController do
   plug(:load_assoc, only: [:new, :edit])
 
   def index(conn, params) do
-    orders = case params["show"] do
-      "not_pending" -> Transactions.list_not_pending_orders()
-      _ -> Transactions.list_pending_orders()
-    end
-    render(conn, "index.html", orders: orders, show: params["show"])
+    orders = Transactions.list_orders_by_status(params["status"] || 3)
+    render(conn, "index.html", orders: orders, status: (params["status"] || "3") |> String.to_integer)
   end
 
   def new(conn, %{"machine_id" => machine_id}) do

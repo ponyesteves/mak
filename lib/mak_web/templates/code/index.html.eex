@@ -3,7 +3,6 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Code</th>
       <th>Name</th>
 
       <th></th>
@@ -12,7 +11,6 @@
   <tbody>
 <%= for code <- @codes do %>
     <tr>
-      <td><%= code.code %></td>
       <td><%= code.name %></td>
 
       <td class="text-right">

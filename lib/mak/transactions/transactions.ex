@@ -17,8 +17,11 @@ defmodule Mak.Transactions do
       [%Code{}, ...]
 
   """
-  def list_codes(scope) do
-    Repo.all(from(c in Code, where: c.scope == ^scope))
+  def list_codes(scope \\ nil ) do
+    case scope do
+      nil -> Repo.all(Code)
+      _ -> Repo.all(from(c in Code, where: c.scope == ^scope)) 
+    end
   end
 
   @doc """
@@ -119,16 +122,9 @@ defmodule Mak.Transactions do
     Repo.all(Order)
   end
 
-  def list_not_pending_orders do
+  def list_orders_by_status(status) do
     Order
-    |> where([o], not(o.status_id == 3))
-    |> Repo.all()
-
-  end
-
-  def list_pending_orders() do
-    Order
-    |> where([o], o.status_id == 3)
+    |> where([o], o.status_id == ^status)
     |> Repo.all()
   end
 
