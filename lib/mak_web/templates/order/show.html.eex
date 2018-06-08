@@ -1,32 +1,38 @@
-<h2><%= dgettext("forms", "order nº %{id}", id: @order.id) %></h2>
+<div class="panel panel-default">
+  <div class="panel-heading"><h2><%= dgettext("forms", "order nº %{id}", id: @order.id) %></h2>
+</div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <strong><%= dgettext("forms", "date") %>:</strong>
+        <%= format_date(@order.date) %>
+      </div> 
+      <div class="col-md-4">
+        <strong><%= dgettext("forms", "machine") %>:</strong>
+       <span class="label label-info code"><%= @order.machine.id %></span>- <%= @order.machine.name %>
+      </div> 
+      <div class="col-md-4">
+        <strong><%= dgettext("forms", "requested_by") %>:</strong>
+        <%= @order.user.username %>
+      </div> 
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <h2><span class="label label-primary">
+          <%= @order.title %>
+        </span></h2>
+      </div>
+      <div class="col-md-8 col-md-offset-2">
+        <h5>
+          <strong><%= dgettext("forms", "desc") %>:</strong>
+          <%= @order.desc %>
+        </h5>
+      </div>
 
-<ul>
+    </div>
+  </div>
+</div>
 
-  <li>
-    <strong><%= dgettext("forms", "date") %>:</strong>
-    <%= format_date(@order.date) %>
-  </li>
-
-  <li>
-    <strong><%= dgettext("forms", "title") %>:</strong>
-    <%= @order.title %>
-  </li>
-
-  <li>
-    <strong><%= dgettext("forms", "desc") %>:</strong>
-    <%= @order.desc %>
-  </li>
-
-  <li>
-    <strong><%= dgettext("forms", "requested_by") %>:</strong>
-    <%= @order.user.username %>
-  </li>
-  <li>
-    <strong><%= dgettext("forms", "machine") %>:</strong>
-    <%= @order.machine.id %> - <%= @order.machine.name %>
-  </li>
-
-</ul>
 <span>
   <%= link dgettext("forms", "edit") <> " " <> dgettext("forms", "order"), to: order_path(@conn, :edit, @order) %>
   <br />

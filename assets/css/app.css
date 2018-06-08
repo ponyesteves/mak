@@ -26,3 +26,7 @@ tbody > tr {
 span.label {
   padding: 15px;
 }
+
+span.label.code {
+  padding: 2px;
+}
