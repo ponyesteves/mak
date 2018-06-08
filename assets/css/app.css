@@ -15,3 +15,14 @@ tbody > tr {
 .nav >  li > a.btn:hover {
   background-color: #d9534f;
 }
+
+.panel-warning > .panel-heading {
+  background-color: #f0ad4e;
+}
+
+.panel-success > .panel-heading {
+  background-color: #5cb85c;
+}
+span.label {
+  padding: 15px;
+}
