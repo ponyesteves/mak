@@ -146,7 +146,7 @@ defmodule Mak.Transactions do
       ** (Ecto.NoResultsError)
 
   """
-  def get_order!(id), do: Repo.get!(Order, id) |> Repo.preload([:user])
+  def get_order!(id), do: Repo.get!(Order, id) |> Repo.preload([:user, :machine])
 
 
   @doc """

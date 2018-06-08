@@ -21,25 +21,21 @@
     <strong><%= dgettext("forms", "requested_by") %>:</strong>
     <%= @order.user.username %>
   </li>
+  <li>
+    <strong><%= dgettext("forms", "machine") %>:</strong>
+    <%= @order.machine.id %> - <%= @order.machine.name %>
+  </li>
 
 </ul>
-<%= if @order.status_id == 3 do %>
-  <%= link to: order_path(@conn, :change_status, @order, status: 5), class: "btn btn-success" do %>
-    <span class="glyphicon glyphicon-ok" />
-  <% end %>
-<% else %>
-  <%= link to: order_path(@conn, :change_status, @order, status: 3), class: "btn btn-danger" do %>
-    <span class="glyphicon glyphicon-repeat" />
-  <% end %>
-<% end %>
-<%= link to: order_path(@conn, :edit, @order), class: "btn btn-warning", style: "margin-left:5px" do %>
-  <span class="glyphicon glyphicon-edit" />
-<% end %>
-<br />
+<span>
+  <%= link dgettext("forms", "edit") <> " " <> dgettext("forms", "order"), to: order_path(@conn, :edit, @order) %>
+  <br />
+</span>
 <%= if(@current_user.admin) do %>
   <span>
     <%= link dgettext("forms", "go back to orders"), to: order_path(@conn, :index) <> "#orders"  %>
-  </span><br />
+  </span>
+  <br />
 <% end %>
 <span>
   <%= link dgettext("forms", "go back to machine"), to: machine_path(@conn, :show, @order.machine_id) <> "#orders" %>
