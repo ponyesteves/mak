@@ -15,3 +15,4 @@ defmodule Mak.Recurring do
    IO.puts "My recurring work!"
   end
 end
+# TODO: cada x horas revisar si hay pendientes e intentar enviar
