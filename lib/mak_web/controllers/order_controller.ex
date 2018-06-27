@@ -21,6 +21,7 @@ defmodule MakWeb.OrderController do
 
     case Transactions.create_order(Map.put(order_params, "status_id", pendiente_id)) do
       {:ok, order} ->
+        Mak.Bpm.post_case(Transactions.get_order!(order.id))
         conn
         |> put_flash(:info, dgettext("flash", "Order %{id} created successfully.", id: order.id ))
         |> redirect(to: order_path(conn, :show, order))
