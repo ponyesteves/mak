@@ -5,9 +5,6 @@ defmodule MakWeb.OrderController do
   alias Mak.Transactions.Order
   alias Mak.Base
 
-
-  plug(:load_assoc, only: [:new, :edit])
-
   def index(conn, params) do
     orders = Transactions.list_orders_by_status(params["status"] || 3)
     render(conn, "index.html", orders: orders, status: (params["status"] || "3") |> String.to_integer)
@@ -74,9 +71,5 @@ defmodule MakWeb.OrderController do
     Transactions.update_order(order, %{"status_id" => status})
 
     redirect(conn, to: order_path(conn, :index))
-  end
-
-  defp load_assoc(conn, _) do
-    Plug.Conn.assign(conn, :types, Transactions.list_codes("type") |> MakWeb.Helpers.to_select())
   end
 end
