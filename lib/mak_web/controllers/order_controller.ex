@@ -3,6 +3,8 @@ defmodule MakWeb.OrderController do
 
   alias Mak.Transactions
   alias Mak.Transactions.Order
+  alias Mak.Base
+
 
   plug(:load_assoc, only: [:new, :edit])
 
@@ -13,7 +15,8 @@ defmodule MakWeb.OrderController do
 
   def new(conn, %{"machine_id" => machine_id}) do
     changeset = Order.changeset(%Order{}, %{"machine_id" => machine_id})
-    render(conn, "new.html", changeset: changeset, machine_id: machine_id)
+    machine = Base.get_machine!(machine_id)
+    render(conn, "new.html", changeset: changeset, machine: machine, machine_id: machine_id)
   end
 
   def create(conn, %{"order" => order_params}) do
@@ -39,7 +42,8 @@ defmodule MakWeb.OrderController do
   def edit(conn, %{"id" => id}) do
     order = Transactions.get_order!(id)
     changeset = Transactions.change_order(order)
-    render(conn, "edit.html", order: order, changeset: changeset)
+    machine = Base.get_machine!(order.machine_id)
+    render(conn, "edit.html", order: order, changeset: changeset, machine: machine)
   end
 
   def update(conn, %{"id" => id, "order" => order_params}) do
