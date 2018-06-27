@@ -45,19 +45,10 @@
         <td><%= (order.desc |> String.slice(0..20)) <> " (ver más ...)" %></td>
 
         <td class="text-right">
-        <%= case order.status_id do %>
-          <%= 3 -> %>
-            <%= link to: order_path(@conn, :change_status, order, status: 4), class: "btn btn-success btn-xs", title: "" do %>
+        <%= if (order.status_id == 3) do %>
+          <%= link to: order_path(@conn, :change_status, order, status: 4), class: "btn btn-success btn-xs", title: "" do %>
             <span class="glyphicon glyphicon-ok" />
-            <% end %>
-          <%= 4 -> %>
-            <%= link to: order_path(@conn, :change_status, order, status: 3), class: "btn btn-success btn-xs", title: "Finalizado" do %>
-            <span class="glyphicon glyphicon-ok" />
-            <% end %>
-          <% _ -> %>
-            <%= link to: order_path(@conn, :change_status, order, status: 3), class: "btn btn-danger btn-xs" do %>
-              <span class="glyphicon glyphicon-repeat" />
-            <% end %>
+          <% end %>
         <% end %>
           <%= link to: order_path(@conn, :edit, order), class: "btn btn-default btn-xs" do %>
           <span class="glyphicon glyphicon-edit" />

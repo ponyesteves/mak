@@ -21,7 +21,7 @@ defmodule MakWeb.OrderController do
 
     case Transactions.create_order(Map.put(order_params, "status_id", pendiente_id)) do
       {:ok, order} ->
-        Mak.Bpm.post_case(Transactions.get_order!(order.id))
+        post_order(order)
         conn
         |> put_flash(:info, dgettext("flash", "Order %{id} created successfully.", id: order.id ))
         |> redirect(to: order_path(conn, :show, order))
@@ -69,8 +69,18 @@ defmodule MakWeb.OrderController do
 
   def change_status(conn, %{"id" => id, "status" => status}) do
     order = Transactions.get_order!(id)
-    Transactions.update_order(order, %{"status_id" => status})
-
+    case status do
+      "4" ->
+        post_order(order)
+      _ ->
+        Transactions.update_order(order, %{"status_id" => status})
+    end
     redirect(conn, to: order_path(conn, :index))
+  end
+
+  def post_order(order) do
+    case Mak.Bpm.post_case(Transactions.get_order!(order.id)) do
+      {:ok, _ } -> Transactions.update_order(order, %{"status_id" => 4 })
+    end
   end
 end

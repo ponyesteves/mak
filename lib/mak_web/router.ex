@@ -49,16 +49,16 @@ defmodule MakWeb.Router do
 
     resources("/orders", OrderController, only: [:create, :edit, :update, :show])
   end
-  
+
   # BackOffice
   scope "/bo", MakWeb do
     pipe_through([:browser, :auth, :backoffice])
     get("/", BackofficeController, :index)
-    
+
     resources("/codes", CodeController)
     resources("/users", UserController)
     resources("/orders", OrderController, only: [:index, :delete])
-    get("/finish_order/:id", OrderController, :change_status)
+    get("/change_status/:id", OrderController, :change_status)
   end
 
   # Other scopes may use custom stacks.
