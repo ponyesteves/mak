@@ -11,7 +11,7 @@ defmodule Mak.Bpm do
   def adapt_order(order) do
     %{
       Prioridad: 1,
-      Descripcion: build_description(order.desc, order.user),
+      Descripcion: build_description(order.desc, order.user, order.machine.name),
       Titulo: order.title,
       FechaComprobante: order.date,
       Fecha: order.date,
@@ -23,7 +23,7 @@ defmodule Mak.Bpm do
     |> Poison.encode!()
   end
 
-  defp build_description(description, user) do
-    "Solicita: " <> user.username <> " -- \n " <> description
+  defp build_description(description, user, machine_name) do
+    "Maquina: " <> machine_name <> " -- Solicita: " <> user.username <> " -- \n " <> description
   end
 end
