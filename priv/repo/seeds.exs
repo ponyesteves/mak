@@ -12,7 +12,9 @@
 
 # Mak.Repo.insert!(%Mak.Transactions.Code{name: "Reparación", scope: "type"})
 # Mak.Repo.insert!(%Mak.Transactions.Code{name: "Mantenimiento", scope: "type"})
-Mak.Repo.insert!(%Mak.Transactions.Code{name: "Pendiente", scope: "status"})
+Mak.Repo.insert!(%Mak.Transactions.Code{id: 1, name: "Pendiente", scope: "status"})
+Mak.Repo.insert!(%Mak.Transactions.Code{id: 4, name: "Enviada", scope: "status"})
+
 # Mak.Repo.insert!(%Mak.Transactions.Code{name: "Interna", scope: "status"})
 # Mak.Repo.insert!(%Mak.Transactions.Code{name: "Finalizada", scope: "status"})
 
