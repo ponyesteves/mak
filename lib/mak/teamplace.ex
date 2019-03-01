@@ -1,6 +1,6 @@
 defmodule Mak.Teamplace do
-  @client_id "dc0df9bf90795fe5c2434613f2d5c623"
-  @client_secret "382b70b31919f0e7453160d742cc5503"
+  @client_id "7e2fe6ae993c92c717c834dc6a23de0a"
+  @client_secret "68804262ab88629b5607d36e9331b6b1"
 
   def get_token() do
     auth_url
