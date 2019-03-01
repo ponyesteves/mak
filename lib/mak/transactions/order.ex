@@ -3,7 +3,7 @@ defmodule Mak.Transactions.Order do
   import Ecto.Changeset
 
   schema "orders" do
-    field(:date, :date, default: Mak.Helpers.today())
+    field(:date, :date)
     field(:desc, :string)
     field(:title, :string)
 
@@ -18,6 +18,14 @@ defmodule Mak.Transactions.Order do
   def changeset(order, attrs) do
     order
     |> cast(attrs, [:date, :title, :desc, :status_id, :machine_id, :user_id])
+    |> default_date
     |> validate_required([:date, :title, :desc])
+  end
+
+  def default_date(changeset) do
+    case get_field(changeset, :date) do
+      nil -> put_change(changeset, :date, Mak.Helpers.today)
+      _ -> changeset
+    end
   end
 end
