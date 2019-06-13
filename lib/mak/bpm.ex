@@ -10,7 +10,7 @@ defmodule Mak.Bpm do
 
   def adapt_order(order) do
     %{
-      Prioridad: 1,
+      Prioridad: 0,
       Descripcion: build_description(order.desc, order.user, order.machine.name),
       Titulo: order.title,
       FechaComprobante: order.date,
