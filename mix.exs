@@ -44,8 +44,9 @@ defmodule Mak.Mixfile do
       {:guardian, "~> 1.0"},
       {:comeonin, "~> 4.0"},
       {:bcrypt_elixir, "~> 1.0"},
-      {:httpoison, "~> 1.1"},
-      {:poison, "~> 3.1"}
+      {:httpoison, "~> 1.2"},
+      {:poison, "~> 3.1"},
+      {:teamplace, git: "https://github.com/ponyesteves/teamplace.git" }
     ]
   end
 
