@@ -1,11 +1,7 @@
 defmodule Mak.Bpm do
-  alias Mak.Teamplace
-  @ep "https://3.teamplace.finneg.com/BSA/api/maqrepint?ACCESS_TOKEN="
-
   def post_case(order) do
-    Teamplace.get_token()
-    |> Teamplace.get_end_point(@ep)
-    |> Teamplace.post_data(adapt_order(order))
+    Application.get_env(:mak, :teamplace_credentials)
+    |> Teamplace.post_data("maqrepint", adapt_order(order))
   end
 
   def adapt_order(order) do

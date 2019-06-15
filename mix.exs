@@ -20,7 +20,13 @@ defmodule Mak.Mixfile do
   def application do
     [
       mod: {Mak.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools],
+      env: [
+        teamplace_credentials: %{
+          client_id: "7e2fe6ae993c92c717c834dc6a23de0a",
+          client_secret: "68804262ab88629b5607d36e9331b6b1"
+        }
+      ]
     ]
   end
 
@@ -46,7 +52,7 @@ defmodule Mak.Mixfile do
       {:bcrypt_elixir, "~> 1.0"},
       {:httpoison, "~> 1.2"},
       {:poison, "~> 3.1"},
-      {:teamplace, git: "https://github.com/ponyesteves/teamplace.git" }
+      {:teamplace, git: "https://github.com/ponyesteves/teamplace.git", tag: "v0.2.0" }
     ]
   end
 
