@@ -9,7 +9,7 @@
 
     <title>Maqs</title>
     <link rel="stylesheet" href="<%= static_path(@conn, ~s[/css/styles.css]) %>">
-    <link rel="manifest" href="<%= static_path(@conn, ~s[/manifest.json]) %>">
+    <!--  <link rel="manifest" href="<%= static_path(@conn, ~s[/manifest.json]) %>"> -->
 
   <!-- Add to home screen for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -22,7 +22,7 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container hidden-print">
       <header class="header">
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
@@ -64,6 +64,9 @@
       </ul>
     </nav>
     </div> <!-- /container -->
+    <div id="print-target-area" class="visible-print-block">
+
+    </div>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

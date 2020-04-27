@@ -1,5 +1,27 @@
 <div class="row">
-  <div class="col-md-6 col-md-offset-3" style="margin-top: 40px">
-    <%= img_tag("https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" <> @id, style: "width:100%") %>
+  <div id="print-area" class="col-md-12" style="margin-top: 40px">
+    <div class="pull-left qr-half">
+      <%= img_tag("https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=" <> @machine.id, id: "qr") %>
+    </div>
+    <div class="pull-left qr-half">
+      <span><%= @machine.name %></span>
+      <br>
+      <span><%= @machine.id %></span>
+      <br>
+      <span>Isowean S.A</span>
+    </div>
   </div>
+  <%= link to: '#', id: "handle-print", class: "btn btn-warning", title: "Imprimir" do %>
+    <span class="glyphicon glyphicon-print">
+  <% end %>
 </div>
+<script type="application/javascript">
+  var printArea = document.querySelector('#print-area')
+
+  document.querySelector('#handle-print').addEventListener('click', (_e) => {
+  var printTargetArea = document.querySelector('#print-target-area')
+
+    printTargetArea.innerHTML = printArea.innerHTML
+    window.print()
+  })
+</script>

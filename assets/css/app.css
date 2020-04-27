@@ -35,3 +35,29 @@ span.label {
 span.label.code {
   padding: 2px !important;
 }
+
+/* Preview area  */
+#print-area span {
+  font-size: large;
+}
+
+#print-area .pull-left {
+  margin-right: 25px;
+}
+
+@media print {
+  .qr-half {
+    width: 24mm;
+    height: 24mm;
+  }
+
+  #print-target-area {
+    width: 48mm;
+    height: 28mm;
+  }
+
+  @page {
+    size: 50mm 30mm landscape;
+    margin:  1mm;
+  }
+}
