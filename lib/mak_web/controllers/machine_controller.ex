@@ -30,7 +30,6 @@ defmodule MakWeb.MachineController do
   end
 
   def show(conn, %{"id" => id} = params) do
-    IO.inspect id
     machine = Base.get_machine!(id, params["orders_query"])
     changeset = Base.change_machine(machine)
     render(conn, "show.html", machine: machine, changeset: changeset)

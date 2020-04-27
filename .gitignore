@@ -3,7 +3,7 @@
 /db
 /deps
 /*.ez
-
+.elixir_ls/
 priv/static/
 node_modules
 
