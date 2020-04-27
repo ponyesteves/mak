@@ -21,7 +21,7 @@ defmodule MakWeb.MachineController do
     case Base.create_machine(parse_image(machine_params)) do
       {:ok, machine} ->
         conn
-        |> put_flash(:info, dgettext("flash", "Machine created successfully."))
+        |> put_flash(:info, dgettext("flash", "La máquina se ha creado correctamente."))
         |> redirect(to: machine_path(conn, :show, machine))
 
       {:error, %Ecto.Changeset{} = changeset} ->

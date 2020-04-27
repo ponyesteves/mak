@@ -1,11 +1,18 @@
 <%= form_for @conn, machine_path(@conn, :index), [method: :get], fn f -> %>
-  <div class="input-group">
-
-    <span class="input-group-addon" aria-hidden="true">
-      <span class="glyphicon glyphicon-search "></span>
-    </span>
-    <%= search_input f, :q, placeholder: dgettext("forms", "find machine"), class: "form-control" %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="input-group">
+      <span class="input-group-addon" aria-hidden="true">
+        <span class="glyphicon glyphicon-search "></span>
+      </span>
+      <%= search_input f, :q, placeholder: dgettext("forms", "find machine"), class: "form-control" %>
+    </div>
   </div>
+  <div class="col-md-offset-2 col-md-4">
+    <%= link "Agregar Máquina", to: machine_path(@conn, :new), class: "btn btn-danger", style: "width: 100%" %>
+  </div>
+</div>
+
 <% end %>
 <div class="row">
 

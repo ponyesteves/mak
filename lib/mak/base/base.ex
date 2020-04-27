@@ -67,11 +67,31 @@ defmodule Mak.Base do
   def create_machine(attrs \\ %{}) do
     %Machine{}
     |> Machine.changeset(attrs)
+    |> post_machine_to_teamplace()
     |> Repo.insert()
   end
 
+  defp post_machine_to_teamplace(%{valid?: false} = changeset), do: changeset
+
+  defp post_machine_to_teamplace(changeset) do
+    data =
+      Ecto.Changeset.apply_changes(changeset)
+      |> machine_to_teamplace_format
+
+    credentials = Application.get_env(:teamplace, :credentials)
+
+    case Teamplace.post_data(credentials, "maquina", data) do
+      {:ok, _ } -> changeset
+      {:error, _ } -> Ecto.Changeset.add_error(changeset, :name, "No se pudo crear en Teamplace")
+    end
+  end
+
+  defp machine_to_teamplace_format(%Machine{id: id, name: name}) do
+    %Teamplace.Maquina{Codigo: id, Nombre: name, BienDeUsoID: "GEN"}
+    |> Poison.encode!
+  end
+
   def upsert_machine(attrs \\ %{}) do
-    IO.inspect attrs["id"]
     case Repo.get(Machine, attrs["id"]) do
       nil ->
         create_machine(attrs)
