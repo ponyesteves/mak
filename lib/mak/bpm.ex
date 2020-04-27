@@ -1,6 +1,6 @@
 defmodule Mak.Bpm do
   def post_case(order) do
-    Application.get_env(:mak, :teamplace_credentials)
+    Application.get_env(:teamplace, :credentials)
     |> Teamplace.post_data("maqrepint", adapt_order(order))
   end
 

@@ -35,4 +35,13 @@ config :logger, :console,
 config :gettext, :default_locale, "es"
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
+
+config :teamplace, :credentials, %{
+  client_id: "7e2fe6ae993c92c717c834dc6a23de0a",
+  client_secret: "68804262ab88629b5607d36e9331b6b1"
+}
+
+config :teamplace, :api_base, "https://3.teamplace.finneg.com/BSA/api/"
+
+
 import_config "#{Mix.env()}.exs"

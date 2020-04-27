@@ -4,7 +4,7 @@ defmodule MakWeb.ImportController do
   alias Mak.Base.Machine
 
   def machines(conn, _params) do
-    Application.get_env(:mak, :teamplace_credentials)
+    Application.get_env(:teamplace, :credentials)
     |> Teamplace.get_data("maquinas", "list")
     |> Enum.map(&translate/1)
     |> Enum.map(&Mak.Base.upsert_machine/1)
