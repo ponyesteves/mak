@@ -1,4 +1,6 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
+
+git pull
 
 MIX_ENV=prod
 
@@ -8,4 +10,4 @@ npm run build --prefix assets
 
 mix phx.digest
 
-systemctl restart maq
+systemctl restart mak
