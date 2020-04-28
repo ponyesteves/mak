@@ -37,8 +37,8 @@ config :gettext, :default_locale, "es"
 # of this file so it overrides the configuration defined above.
 
 config :teamplace, :credentials, %{
-  client_id: "7e2fe6ae993c92c717c834dc6a23de0a",
-  client_secret: "68804262ab88629b5607d36e9331b6b1"
+  client_id: "60f1bf81ce659570fcde63186eb6f4e4",
+  client_secret: "a25fdd9012d8cff9a23174d8f027e928"
 }
 
 config :teamplace, :api_base, "https://3.teamplace.finneg.com/BSA/api/"
