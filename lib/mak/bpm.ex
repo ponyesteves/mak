@@ -20,6 +20,6 @@ defmodule Mak.Bpm do
   end
 
   defp build_description(description, user, machine_name, machine_codigo) do
-    "Codigo:" <> machine_codigo <> " -- Maquina: " <> machine_name <> " -- Solicita: " <> user.username <> " -- \n " <> description
+    "Codigo: " <> machine_codigo <> " -- Maquina: " <> machine_name <> " -- Solicita: " <> user.username <> " -- \n " <> description
   end
 end
