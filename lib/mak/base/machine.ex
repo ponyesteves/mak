@@ -21,7 +21,7 @@ defmodule Mak.Base.Machine do
     |> cast(attrs, [:id, :name, :desc, :image])
     |> validate_image_size(500)
     |> validate_required([:name, :desc])
-    |> validate_format(:id, ~r/^\\d{7,8}$/)
+    |> validate_format(:id, ~r/^\d{7,8}$/)
   end
 
   defp validate_image_size(changeset, size_limit_kb) do
