@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+MIX_ENV=prod
+
+mix deps.get
+
+npm run build --prefix assets
+
+mix phx.digest
+
+systemctl restart maq
