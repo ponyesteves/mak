@@ -2,7 +2,7 @@
 
 git pull
 
-MIX_ENV=prod
+export MIX_ENV=prod
 
 mix deps.get
 
