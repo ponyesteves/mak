@@ -92,7 +92,7 @@ defmodule Mak.Base do
 
     credentials = Application.get_env(:teamplace, :credentials)
 
-    case Teamplace.post_data(credentials, "maquina", data) do
+    case Teamplace.post_data(credentials, "cbmaquina", data) do
       {:ok, _ } -> changeset
       {:error, _ } -> Ecto.Changeset.add_error(changeset, :name, "No se pudo crear en Teamplace")
     end
